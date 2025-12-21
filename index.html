@@ -945,19 +945,19 @@
                         <form id="contact-mailto-form" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
                             <div class="row gy-4">
 
-                                <div class="col-md-4">
-                                    <label for="name-field" class="pb-2">Your Name</label>
-                                    <input type="text" name="name" id="name-field" class="form-control" required>
-                                </div>
-
-                                <div class="col-md-8">
+                                <div class="col-md-12">
                                     <label for="subject-field" class="pb-2">Subject</label>
                                     <input type="text" class="form-control" name="subject" id="subject-field" required>
                                 </div>
 
                                 <div class="col-md-12">
                                     <label for="message-field" class="pb-2">Message</label>
-                                    <textarea class="form-control" name="message" rows="10" id="message-field" required></textarea>
+                                    <textarea class="form-control" name="message" rows="10" id="message-field" required>Hello Louan,
+
+[Your message]
+
+Best regards,
+[Your name]</textarea>
                                 </div>
 
                                 <div class="col-md-12 text-center">
@@ -1021,20 +1021,13 @@
             form.addEventListener("submit", function (e) {
                 e.preventDefault();
 
-                const name = document.getElementById("name-field").value.trim();
                 const subject = document.getElementById("subject-field").value.trim();
-                const message = document.getElementById("message-field").value.trim();
-
-                const body =
-                    `Hello Louan,\n\n` +
-                    `${message}\n\n` +
-                    `Best regards,\n` +
-                    `${name}\n`;
+                const message = document.getElementById("message-field").value;
 
                 const mailto =
                     `mailto:${encodeURIComponent(to)}` +
                     `?subject=${encodeURIComponent(subject)}` +
-                    `&body=${encodeURIComponent(body)}`;
+                    `&body=${encodeURIComponent(message)}`;
 
                 window.location.href = mailto;
             });
