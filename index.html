@@ -15,9 +15,8 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Raleway:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+<!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -34,6 +33,320 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+  <!-- Kitraz Forest + Mist Theme (custom) -->
+  <style id="kitraz-forest-mist-theme">
+    :root {
+      --forest-950: #07140e;
+      --forest-900: #091a12;
+      --forest-800: #0d2418;
+      --mist-50: #f4f1ea;
+      --mist-100: #e7e2d7;
+      --parchment: #f2efe7;
+      --ink: #161a17;
+
+      --accent: #b88a3b;         /* muted gold */
+      --accent-soft: rgba(184, 138, 59, 0.22);
+      --sage: #7db08f;           /* misty green */
+    }
+
+    /* Overall atmosphere */
+    body.index-page {
+      background:
+        radial-gradient(1200px 800px at 20% 10%, rgba(125, 176, 143, 0.10), transparent 60%),
+        radial-gradient(1000px 700px at 80% 30%, rgba(184, 138, 59, 0.08), transparent 55%),
+        linear-gradient(180deg, var(--forest-950) 0%, #0a1b13 35%, #0b1f16 100%);
+      color: rgba(233, 239, 232, 0.95);
+    }
+
+    /* Subtle grain overlay */
+    body.index-page::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27180%27%20height%3D%27180%27%3E%0A%3Cfilter%20id%3D%27n%27%3E%0A%20%20%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%27.8%27%20numOctaves%3D%273%27%20stitchTiles%3D%27stitch%27/%3E%0A%20%20%3CfeColorMatrix%20type%3D%27saturate%27%20values%3D%270%27/%3E%0A%3C/filter%3E%0A%3Crect%20width%3D%27180%27%20height%3D%27180%27%20filter%3D%27url%28%23n%29%27%20opacity%3D%27.35%27/%3E%0A%3C/svg%3E");
+      opacity: 0.05;
+      mix-blend-mode: overlay;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5 {
+      letter-spacing: 0.01em;
+    }
+
+    .hero h2,
+    #header .sitename,
+    .section-title h2 {
+      font-family: "Cormorant Garamond", serif;
+      letter-spacing: 0.04em;
+    }
+
+    /* Dark and light section surfaces */
+    .dark-background {
+      background:
+        radial-gradient(1400px 900px at 10% -10%, rgba(125, 176, 143, 0.12), transparent 55%),
+        linear-gradient(180deg, rgba(7, 20, 14, 0.96) 0%, rgba(8, 18, 13, 0.96) 100%);
+      color: rgba(233, 239, 232, 0.95);
+    }
+
+    .light-background,
+    .about.section,
+    .resume.section,
+    .contact.section {
+      background:
+        radial-gradient(1000px 600px at 10% 0%, rgba(184, 138, 59, 0.08), transparent 60%),
+        radial-gradient(900px 600px at 80% 10%, rgba(125, 176, 143, 0.06), transparent 55%),
+        linear-gradient(180deg, var(--parchment) 0%, #ece7dd 100%);
+      color: var(--ink);
+    }
+
+    .light-background a,
+    .about.section a,
+    .resume.section a,
+    .contact.section a {
+      color: #1b3b2a;
+    }
+
+    /* HERO: cinematic overlay + mist */
+    .hero {
+      position: relative;
+      isolation: isolate;
+    }
+
+    .hero img {
+      filter: saturate(0.88) contrast(1.05) brightness(0.78);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(
+        180deg,
+        rgba(7, 20, 14, 0.30) 0%,
+        rgba(7, 20, 14, 0.70) 68%,
+        rgba(7, 20, 14, 0.92) 100%
+      );
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: -15%;
+      z-index: 2;
+      background:
+        radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.08), transparent 45%),
+        radial-gradient(circle at 70% 10%, rgba(255, 255, 255, 0.05), transparent 40%),
+        radial-gradient(circle at 50% 70%, rgba(125, 176, 143, 0.08), transparent 55%);
+      filter: blur(18px);
+      opacity: 0.85;
+      pointer-events: none;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 3;
+    }
+
+    .hero h2 {
+      text-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+    }
+
+    .hero p {
+      color: rgba(233, 239, 232, 0.92);
+    }
+
+    /* Section titles: "rune line" */
+    .section-title h2 {
+      position: relative;
+      display: inline-block;
+      padding-right: 1.2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title h2::before {
+      content: "✦";
+      position: absolute;
+      left: -1.2rem;
+      bottom: -1.05rem;
+      font-size: 0.9rem;
+      color: var(--accent);
+      opacity: 0.9;
+    }
+
+    .section-title h2::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.45rem;
+      height: 2px;
+      width: 115%;
+      border-radius: 999px;
+      background: linear-gradient(
+        90deg,
+        var(--accent) 0%,
+        rgba(184, 138, 59, 0.35) 55%,
+        transparent 100%
+      );
+    }
+
+    .section-title p {
+      max-width: 70ch;
+      opacity: 0.9;
+    }
+
+    /* Sidebar panel */
+    #header.header {
+      background:
+        radial-gradient(900px 600px at 30% 0%, rgba(125, 176, 143, 0.14), transparent 60%),
+        linear-gradient(180deg, rgba(7, 20, 14, 0.96) 0%, rgba(8, 18, 13, 0.96) 100%);
+      border-right: 1px solid rgba(184, 138, 59, 0.18);
+      box-shadow: 22px 0 70px rgba(0, 0, 0, 0.28);
+    }
+
+    #header .profile-img img {
+      border: 2px solid rgba(184, 138, 59, 0.35);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+    }
+
+    #header .social-links a {
+      background: rgba(244, 241, 234, 0.06);
+      border: 1px solid rgba(184, 138, 59, 0.16);
+      transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+    }
+
+    #header .social-links a:hover {
+      background: rgba(184, 138, 59, 0.18);
+      border-color: rgba(184, 138, 59, 0.38);
+      transform: translateY(-1px);
+    }
+
+    .navmenu a {
+      position: relative;
+      border-left: 2px solid transparent;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .navmenu a:hover {
+      border-left-color: rgba(184, 138, 59, 0.55);
+      background: rgba(244, 241, 234, 0.05);
+    }
+
+    .navmenu a.active {
+      border-left-color: var(--accent);
+      background: rgba(184, 138, 59, 0.12);
+    }
+
+    .navmenu a.active::after {
+      content: "";
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+      transform: translateY(-50%);
+      box-shadow: 0 0 18px rgba(184, 138, 59, 0.60);
+    }
+
+    /* Portfolio cards: premium hover */
+    .portfolio .portfolio-content {
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(184, 138, 59, 0.22);
+      box-shadow: 0 18px 45px rgba(7, 20, 14, 0.18);
+      transform: translateZ(0);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .portfolio .portfolio-content img {
+      transition: transform 0.7s ease, filter 0.7s ease;
+    }
+
+    .portfolio .portfolio-content:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 26px 70px rgba(7, 20, 14, 0.22);
+      border-color: rgba(184, 138, 59, 0.38);
+    }
+
+    .portfolio .portfolio-content:hover img {
+      transform: scale(1.06);
+      filter: saturate(0.95) contrast(1.06);
+    }
+
+    .portfolio .portfolio-info {
+      backdrop-filter: blur(10px);
+      background: linear-gradient(
+        180deg,
+        rgba(7, 20, 14, 0.0) 0%,
+        rgba(7, 20, 14, 0.72) 70%,
+        rgba(7, 20, 14, 0.92) 100%
+      );
+    }
+
+    .portfolio .portfolio-info h4 {
+      font-family: "Cormorant Garamond", serif;
+      letter-spacing: 0.02em;
+    }
+
+    .portfolio .portfolio-info a.details-link {
+      border-radius: 10px;
+      padding: 0.35rem 0.5rem;
+      border: 1px solid rgba(184, 138, 59, 0.35);
+      background: rgba(184, 138, 59, 0.14);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .portfolio .portfolio-info a.details-link:hover {
+      background: rgba(184, 138, 59, 0.28);
+      transform: translateY(-1px);
+    }
+
+    /* Buttons & accents */
+    .btn, button, .php-email-form button[type="submit"] {
+      border-radius: 999px !important;
+    }
+
+    .php-email-form button[type="submit"] {
+      background: linear-gradient(180deg, rgba(184, 138, 59, 0.95), rgba(184, 138, 59, 0.75));
+      border: 1px solid rgba(184, 138, 59, 0.45);
+      box-shadow: 0 16px 40px rgba(184, 138, 59, 0.20);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    }
+
+    .php-email-form button[type="submit"]:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 22px 55px rgba(184, 138, 59, 0.26);
+      filter: saturate(1.05);
+    }
+
+    .php-email-form input,
+    .php-email-form textarea {
+      border-radius: 14px;
+      border: 1px solid rgba(184, 138, 59, 0.22);
+      background: rgba(244, 241, 234, 0.78);
+    }
+
+    /* Scroll-to-top button */
+    .scroll-top {
+      background: linear-gradient(180deg, rgba(184, 138, 59, 0.92), rgba(184, 138, 59, 0.70));
+      box-shadow: 0 14px 40px rgba(184, 138, 59, 0.22);
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important;
+      }
+    }
+  </style>
+
 </head>
 
 <body class="index-page">
@@ -471,7 +784,7 @@
                     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
                         <h3 class="resume-title">Education</h3>
 
-                        <div class="resume-item pb-0">
+                        <div class="resume-item">
                             <h4>
                                 Graduate Engineer, JIN track <br>
                                 (Video Games and Digital Interactions)
@@ -487,7 +800,7 @@
                             </ul>
                         </div><!-- Edn Resume Item -->
 
-                        <div class="resume-item pb-0">
+                        <div class="resume-item">
                             <h4>
                                 CPGE TSI
                             </h4>
@@ -506,7 +819,7 @@
 
                         <h3 class="resume-title">School &amp; Personnal Experiences</h3>
 
-                        <div class="resume-item pb-0">
+                        <div class="resume-item">
                             <h4>
                                 Project - “Zeus Versus Humans”
                             </h4>
@@ -523,7 +836,7 @@
                             </ul>
                         </div><!-- Edn Resume Item -->
 
-                        <div class="resume-item pb-0">
+                        <div class="resume-item">
                             <h4>
                                 Unity Developer - Game Jams
                             </h4>
@@ -541,7 +854,7 @@
                             </ul>
                         </div><!-- Edn Resume Item -->
 
-                        <div class="resume-item pb-0">
+                        <div class="resume-item">
                             <h4>
                                 Project — “Insect Identification via Machine Learning”
                             </h4>
@@ -561,7 +874,7 @@
 
 
                         <h3 class="resume-title">International &amp; Language Stays</h3>
-                        <div class="resume-item pb-0">
+                        <div class="resume-item">
                             <ul>
                                 <li>Goiânia, Brazil | 1 year | Personal stay</li>
                                 <li>Chicoutimi, Québec, Canada | 5 months | Exchange semester at UQAC</li>
