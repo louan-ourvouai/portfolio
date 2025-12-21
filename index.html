@@ -60,7 +60,7 @@
     }
 
     /* Subtle grain overlay */
-    body.index-page::before {
+    body.index-page::after {
       content: "";
       position: fixed;
       inset: 0;
@@ -70,6 +70,7 @@
       opacity: 0.05;
       mix-blend-mode: overlay;
     }
+
 
     /* Typography */
     h1, h2, h3, h4, h5 {
@@ -107,6 +108,88 @@
     .resume.section a,
     .contact.section a {
       color: #1b3b2a;
+    }
+
+
+    /* ==========================================================
+       OPTIONAL AMBIENCE BACKGROUNDS (subtle, per-section)
+       ----------------------------------------------------------
+       How to use (add to any <section>):
+         data-ambience-bg="assets/img/ambience/forest.jpg"
+       Optional tuning:
+         data-ambience-tone="dark"  (or "light")
+         data-ambience-opacity="0.18"   (image opacity 0..1)
+         data-ambience-overlay="0.65"   (overlay strength 0..1)
+       ========================================================== */
+
+    section.kitraz-ambience {
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Background image layer (kept subtle so it never overwhelms content) */
+    section.kitraz-ambience::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+
+      background-image: var(--kitraz-ambience-image);
+      background-size: var(--kitraz-site-ambience-size, cover);
+      background-position: var(--kitraz-site-ambience-position, center);
+      background-repeat: no-repeat;
+
+      transform: scale(1.02);
+      opacity: var(--kitraz-ambience-opacity, 0.18);
+      filter: saturate(0.85) contrast(1.05) brightness(0.78);
+    }
+
+    /* Readability layer */
+    section.kitraz-ambience::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      opacity: var(--kitraz-ambience-overlay, 0.65);
+      background:
+        radial-gradient(120% 120% at 20% 10%, rgba(0,0,0,.18), rgba(0,0,0,0) 60%),
+        linear-gradient(180deg, rgba(7,20,14,.25), rgba(7,20,14,.55));
+      pointer-events: none;
+    }
+
+    /* Put actual content above the overlays */
+    section.kitraz-ambience .container,
+    section.kitraz-ambience .container-fluid,
+    section.kitraz-ambience .container-lg,
+    section.kitraz-ambience .container-md,
+    section.kitraz-ambience .container-sm,
+    section.kitraz-ambience .container-xl,
+    section.kitraz-ambience .container-xxl {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* If the section is light, adjust filters so the image stays airy */
+    section.light-background.kitraz-ambience::before {
+      opacity: var(--kitraz-ambience-opacity, 0.14);
+      filter: saturate(0.90) contrast(1.02) brightness(0.96);
+    }
+
+    section.light-background.kitraz-ambience::after {
+      opacity: var(--kitraz-ambience-overlay, 0.55);
+      background:
+        radial-gradient(120% 120% at 20% 10%, rgba(255,255,255,.22), rgba(255,255,255,0) 60%),
+        linear-gradient(180deg, rgba(242,239,231,.62), rgba(242,239,231,.80));
+    }
+
+    /* Force tone if you want (data-ambience-tone="dark|light") */
+    section.kitraz-ambience--dark::before { opacity: var(--kitraz-ambience-opacity, 0.20); filter: saturate(0.85) contrast(1.06) brightness(0.72); }
+    section.kitraz-ambience--dark::after { opacity: var(--kitraz-ambience-overlay, 0.70); }
+
+    section.kitraz-ambience--light::before { opacity: var(--kitraz-ambience-opacity, 0.14); filter: saturate(0.92) contrast(1.02) brightness(0.98); }
+    section.kitraz-ambience--light::after  { opacity: var(--kitraz-ambience-overlay, 0.55); background:
+      radial-gradient(120% 120% at 20% 10%, rgba(255,255,255,.22), rgba(255,255,255,0) 60%),
+      linear-gradient(180deg, rgba(242,239,231,.62), rgba(242,239,231,.80));
     }
 
     /* HERO: cinematic overlay + mist */
@@ -345,11 +428,96 @@
         animation: none !important;
       }
     }
-  </style>
+  
+
+    /* === Site-wide ambience background (behind ALL sections, excluding the sidebar on desktop) === */
+    :root {
+      /* Match the sidebar width from the template (iPortfolio uses 300px by default). */
+      --kitraz-sidebar-w: 300px;
+    
+      --kitraz-site-ambience-fallback: rgba(7, 20, 14, 1);
+}
+
+    
+    body { background-color: var(--kitraz-site-ambience-fallback, rgba(7, 20, 14, 1)); }
+main.main.kitraz-site-ambience {
+      position: relative;
+      isolation: isolate; /* keeps our negative z-index layers behind content but above the page */
+    }
+
+    main.main.kitraz-site-ambience::before,
+    main.main.kitraz-site-ambience::after {
+      content: "";
+      position: fixed;
+      /* Overscan prevents "black bars" when the parallax translate moves the background */
+      top: calc(-1 * var(--kitraz-site-ambience-overscan, 180px));
+      bottom: calc(-1 * var(--kitraz-site-ambience-overscan, 180px));
+      right: 0;
+      left: 0;
+      pointer-events: none;
+      /* If the image doesn't cover (e.g., 'contain'), show a soft fallback instead of black */
+      background-color: var(--kitraz-site-ambience-fallback, rgba(7, 20, 14, 1));
+    }
+
+      /* Background image layer */
+      main.main.kitraz-site-ambience::before {
+          z-index: -2;
+          background-image: var(--kitraz-site-ambience-image);
+          background-size: var(--kitraz-site-ambience-size, cover); /* on force cover */
+          background-position: var(--kitraz-site-ambience-position, center);
+          background-repeat: no-repeat;
+          /* plus de zoom pour avoir de la marge quand ça bouge */
+          opacity: var(--kitraz-site-ambience-opacity, 0.45);
+          filter: var(--kitraz-site-ambience-filter, saturate(1) contrast(1.02) brightness(1));
+          transform: translate3d(0, var(--kitraz-site-ambience-parallax, 0px), 0) scale(var(--kitraz-site-ambience-scale, 1.08));
+          will-change: transform;
+      }
+
+      /* Soft overlay désactivé pour éviter la barre sombre */
+      main.main.kitraz-site-ambience::after {
+          z-index: -1;
+          background: transparent;
+          opacity: 0;
+      }
+
+    /* On desktop, don't draw the ambience under the left sidebar */
+    @media (min-width: 1200px) {
+      main.main.kitraz-site-ambience::before,
+      main.main.kitraz-site-ambience::after {
+        left: var(--kitraz-sidebar-w);
+      }
+    }
+
+    /* Slight transparency so the global background can subtly show through (kept gentle to avoid hurting readability) */
+    main.main.kitraz-site-ambience section.section:not(.hero):not(.kitraz-ambience).light-background,
+    main.main.kitraz-site-ambience section.section:not(.hero):not(.kitraz-ambience).about.section,
+    main.main.kitraz-site-ambience section.section:not(.hero):not(.kitraz-ambience).resume.section,
+    main.main.kitraz-site-ambience section.section:not(.hero):not(.kitraz-ambience).contact.section {
+      background:
+        radial-gradient(1000px 600px at 10% 0%, rgba(184, 138, 59, 0.10), transparent 60%),
+        linear-gradient(180deg, rgba(244, 241, 234, 0.86) 0%, rgba(233, 226, 215, 0.86) 100%);
+      backdrop-filter: blur(2px);
+    }
+
+    main.main.kitraz-site-ambience section.section:not(.hero):not(.kitraz-ambience).dark-background {
+      background:
+        radial-gradient(1400px 900px at 10% -10%, rgba(125, 176, 143, 0.12), transparent 55%),
+        linear-gradient(180deg, rgba(7, 20, 14, 0.88) 0%, rgba(8, 18, 13, 0.88) 100%);
+    }
+
+</style>
 
 </head>
 
-<body class="index-page">
+<body class="index-page"
+      data-site-bg="assets/img/ambience/mushroom.jpg"
+      data-site-bg-fit="cover"
+      data-site-bg-position="top center"
+      data-site-bg-sidebar-w="300px"
+      data-site-bg-parallax="0.06"
+      data-site-bg-parallax-max="420"
+      data-site-bg-opacity="1"
+      data-site-bg-overlay-opacity="0">
 
     <header id="header" class="header dark-background d-flex flex-column">
         <i class="header-toggle d-xl-none bi bi-list"></i>
@@ -784,7 +952,7 @@
                     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
                         <h3 class="resume-title">Education</h3>
 
-                        <div class="resume-item">
+                        <div class="resume-item pb-0">
                             <h4>
                                 Graduate Engineer, JIN track <br>
                                 (Video Games and Digital Interactions)
@@ -800,7 +968,7 @@
                             </ul>
                         </div><!-- Edn Resume Item -->
 
-                        <div class="resume-item">
+                        <div class="resume-item pb-0">
                             <h4>
                                 CPGE TSI
                             </h4>
@@ -819,7 +987,7 @@
 
                         <h3 class="resume-title">School &amp; Personnal Experiences</h3>
 
-                        <div class="resume-item">
+                        <div class="resume-item pb-0">
                             <h4>
                                 Project - “Zeus Versus Humans”
                             </h4>
@@ -836,7 +1004,7 @@
                             </ul>
                         </div><!-- Edn Resume Item -->
 
-                        <div class="resume-item">
+                        <div class="resume-item pb-0">
                             <h4>
                                 Unity Developer - Game Jams
                             </h4>
@@ -854,7 +1022,7 @@
                             </ul>
                         </div><!-- Edn Resume Item -->
 
-                        <div class="resume-item">
+                        <div class="resume-item pb-0">
                             <h4>
                                 Project — “Insect Identification via Machine Learning”
                             </h4>
@@ -874,7 +1042,7 @@
 
 
                         <h3 class="resume-title">International &amp; Language Stays</h3>
-                        <div class="resume-item">
+                        <div class="resume-item pb-0">
                             <ul>
                                 <li>Goiânia, Brazil | 1 year | Personal stay</li>
                                 <li>Chicoutimi, Québec, Canada | 5 months | Exchange semester at UQAC</li>
@@ -1223,23 +1391,23 @@
 
                         <div class="info-wrap">
                             <!--
-    <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-        <i class="bi bi-geo-alt flex-shrink-0"></i>
-        <div>
-            <h3>Address</h3>
-            <p>A108 Adam Street, New York, NY 535022</p>
-        </div>
-    </div><!- - End Info Item - ->
+                            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                                <div>
+                                    <h3>Address</h3>
+                                    <p>A108 Adam Street, New York, NY 535022</p>
+                                </div>
+                            </div><!- - End Info Item - ->
 
 
-    <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-        <i class="bi bi-telephone flex-shrink-0"></i>
-        <div>
-            <h3>Call Us</h3>
-            <p>+1 5589 55488 55</p>
-        </div>
-    </div><!- - End Info Item - ->
-    -->
+                            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                                <i class="bi bi-telephone flex-shrink-0"></i>
+                                <div>
+                                    <h3>Call Us</h3>
+                                    <p>+1 5589 55488 55</p>
+                                </div>
+                            </div><!- - End Info Item - ->
+                            -->
 
                             <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
                                 <i class="bi bi-envelope flex-shrink-0"></i>
@@ -1270,8 +1438,8 @@
                                 </div>
                             </div><!-- End Info Item -->
                             <!--
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    -->
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            -->
                         </div>
                     </div>
 
@@ -1365,6 +1533,144 @@ Best regards,
 
                 window.location.href = mailto;
             });
+        })();
+    </script>
+
+
+    <!-- Optional ambience backgrounds: add data-ambience-bg="assets/img/ambience/your-image.jpg" to any <section> -->
+    <script>
+        (function () {
+            "use strict";
+
+            function applyAmbience(el) {
+                var url = el.getAttribute("data-ambience-bg");
+                if (!url) return;
+
+                // Apply CSS variable for background image
+                el.style.setProperty("--kitraz-ambience-image", 'url("' + url + '")');
+
+                // Optional: image opacity + overlay strength
+                var imgOpacity = el.getAttribute("data-ambience-opacity");
+                if (imgOpacity) el.style.setProperty("--kitraz-ambience-opacity", imgOpacity);
+
+                var overlay = el.getAttribute("data-ambience-overlay");
+                if (overlay) el.style.setProperty("--kitraz-ambience-overlay", overlay);
+
+                // Optional: force tone
+                var tone = el.getAttribute("data-ambience-tone"); // "dark" | "light"
+                if (tone === "dark") el.classList.add("kitraz-ambience--dark");
+                if (tone === "light") el.classList.add("kitraz-ambience--light");
+
+                el.classList.add("kitraz-ambience");
+            }
+
+
+
+            function applySiteAmbience() {
+                var main = document.querySelector("main.main");
+                if (!main) return;
+
+                // Set this on <body> or <main>, for example:
+                // <body data-site-bg="assets/img/ambience/forest.jpg">
+                var host = document.querySelector("[data-site-bg]");
+                if (!host) return;
+
+                var url = host.getAttribute("data-site-bg");
+                if (!url) return;
+
+                // Apply CSS variable for background image
+                main.style.setProperty("--kitraz-site-ambience-image", 'url("' + url + '")');
+
+                // Optional tweaks (keep values subtle, e.g. 0.08–0.18)
+                var opacity = host.getAttribute("data-site-bg-opacity");
+                if (opacity) main.style.setProperty("--kitraz-site-ambience-opacity", opacity);
+
+                var overlayOpacity = host.getAttribute("data-site-bg-overlay-opacity");
+                if (overlayOpacity) main.style.setProperty("--kitraz-site-ambience-overlay-opacity", overlayOpacity);
+
+                // Advanced: allow overriding overlay/filter via CSS strings
+                var overlay = host.getAttribute("data-site-bg-overlay");
+                if (overlay) main.style.setProperty("--kitraz-site-ambience-overlay", overlay);
+
+                var filter = host.getAttribute("data-site-bg-filter");
+                if (filter) main.style.setProperty("--kitraz-site-ambience-filter", filter);
+                // Fit / framing:
+                // data-site-bg-fit="contain" to avoid cropping (default is "cover")
+                // data-site-bg-position="top center" (default is "center")
+                var fit = host.getAttribute("data-site-bg-fit");
+                if (fit) {
+                    main.style.setProperty("--kitraz-site-ambience-size", fit);
+                    // If using contain, avoid the extra scale that can re-crop edges
+                    if (fit.trim().toLowerCase() === "contain") {
+                        main.style.setProperty("--kitraz-site-ambience-scale", "1");
+                    }
+                }
+
+                var position = host.getAttribute("data-site-bg-position");
+                if (position) main.style.setProperty("--kitraz-site-ambience-position", position);
+
+
+                // If you changed the sidebar width, you can set: data-site-bg-sidebar-w="280px"
+                var sidebarW = host.getAttribute("data-site-bg-sidebar-w");
+                if (sidebarW) document.documentElement.style.setProperty("--kitraz-sidebar-w", sidebarW);
+
+                main.classList.add("kitraz-site-ambience");
+            }
+
+
+
+            function setupSiteAmbienceParallax() {
+                var host = document.querySelector("[data-site-bg]");
+                var main = document.querySelector("main.main");
+                if (!host || !main || !main.classList.contains("kitraz-site-ambience")) return;
+
+                // Set on <body> (recommended):
+                // data-site-bg-parallax="0.04"   // how much the background moves relative to scroll (0..0.12 typical)
+                // data-site-bg-parallax-max="140" // max shift in px (prevents huge drift on long pages)
+                var factor = parseFloat(host.getAttribute("data-site-bg-parallax") || "0.04");
+                var maxShift = parseFloat(host.getAttribute("data-site-bg-parallax-max") || "140");
+
+
+                // Overscan prevents gaps (black bars) when the parallax transform moves the fixed background.
+                main.style.setProperty("--kitraz-site-ambience-overscan", (Math.max(0, maxShift) + 60) + "px");
+                // Respect reduced motion
+                if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                    factor = 0;
+                }
+                if (!isFinite(factor) || factor <= 0) return;
+
+                var ticking = false;
+
+                function clamp(v, min, max) { return Math.max(min, Math.min(max, v)); }
+
+                function update() {
+                    ticking = false;
+                    var y = window.scrollY || window.pageYOffset || 0;
+                    // Negative makes the background drift slightly opposite to scroll (more natural depth).
+                    var shift = clamp(-y * factor, -maxShift, maxShift);
+                    main.style.setProperty("--kitraz-site-ambience-parallax", shift.toFixed(2) + "px");
+                }
+
+                window.addEventListener("scroll", function () {
+                    if (!ticking) {
+                        ticking = true;
+                        window.requestAnimationFrame(update);
+                    }
+                }, { passive: true });
+
+                window.addEventListener("resize", function () {
+                    if (!ticking) {
+                        ticking = true;
+                        window.requestAnimationFrame(update);
+                    }
+                });
+
+                update();
+            }
+
+            applySiteAmbience();
+            setupSiteAmbienceParallax();
+            document.querySelectorAll("section[data-ambience-bg]").forEach(applyAmbience);
         })();
     </script>
 
