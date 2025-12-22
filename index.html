@@ -8,33 +8,20 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-  <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Raleway:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
-<!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: iPortfolio
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Updated: Jun 29 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-
-  <!-- Kitraz Forest + Mist Theme (custom) -->
   <style id="kitraz-forest-mist-theme">
     :root {
       --forest-950: #07140e;
@@ -505,6 +492,83 @@ main.main.kitraz-site-ambience {
         linear-gradient(180deg, rgba(7, 20, 14, 0.88) 0%, rgba(8, 18, 13, 0.88) 100%);
     }
 
+    /* Language Switcher Styles */
+    .lang-switch-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 9999;
+    }
+    
+    .lang-btn {
+      background: rgba(7, 20, 14, 0.85);
+      color: #fff;
+      border: 1px solid var(--accent);
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-family: "Raleway", sans-serif;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .lang-btn:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .lang-dropdown {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      margin-top: 8px;
+      background: rgba(7, 20, 14, 0.95);
+      border: 1px solid rgba(184, 138, 59, 0.3);
+      border-radius: 12px;
+      padding: 8px 0;
+      display: none;
+      min-width: 160px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    .lang-dropdown.show {
+      display: block;
+      animation: fadeIn 0.2s ease;
+    }
+
+    .lang-option {
+      display: block;
+      width: 100%;
+      padding: 8px 20px;
+      color: #e7e2d7;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background 0.2s;
+      background: none;
+      border: none;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .lang-option:hover {
+      background: rgba(184, 138, 59, 0.2);
+      color: var(--accent);
+    }
+
+    .lang-option.active {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
 </style>
 
 </head>
@@ -519,6 +583,19 @@ main.main.kitraz-site-ambience {
       data-site-bg-opacity="1"
       data-site-bg-overlay-opacity="0">
 
+    <div class="lang-switch-container">
+        <button class="lang-btn" id="langToggle" aria-label="Change Language">
+            <i class="bi bi-translate"></i>
+            <span id="currentLangLabel">English</span>
+            <i class="bi bi-chevron-down" style="font-size: 10px;"></i>
+        </button>
+        <div class="lang-dropdown" id="langDropdown">
+            <button class="lang-option" data-lang="en">English</button>
+            <button class="lang-option" data-lang="fr">Français</button>
+            <button class="lang-option" data-lang="pt-br">Português (Brasil)</button>
+        </div>
+    </div>
+
     <header id="header" class="header dark-background d-flex flex-column">
         <i class="header-toggle d-xl-none bi bi-list"></i>
 
@@ -527,31 +604,22 @@ main.main.kitraz-site-ambience {
         </div>
 
         <a href="index.html" class="logo d-flex align-items-center justify-content-center">
-            <!-- Uncomment the line below if you also wish to use an image logo -->
-            <!-- <img src="assets/img/logo.png" alt=""> -->
-            <h1 class="sitename">Ourvouai Louan</h1>
+            <h1 class="sitename" data-i18n="t.001">Ourvouai Louan</h1>
         </a>
 
         <div class="social-links text-center">
             <a href="https://www.linkedin.com/in/louan-ourvouai-96bb15218/" class="linkedin" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
             <a href="https://github.com/louan-ourvouai" class="github" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
             <a href="https://itch.io/profile/kitraz" class="itchio" target="_blank" rel="noopener noreferrer"><i class="bi bi-controller"></i></a>
-            <!--
-            <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
-            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-            -->
-        </div>
+            </div>
 
         <nav id="navmenu" class="navmenu">
             <ul>
-                <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
-                <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
-                <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
-                <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Projects</a></li>
-                <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+                <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i><span data-i18n="t.002">Home</span></a></li>
+                <li><a href="#about"><i class="bi bi-person navicon"></i> <span data-i18n="t.003">About</span></a></li>
+                <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> <span data-i18n="t.004">Resume</span></a></li>
+                <li><a href="#portfolio"><i class="bi bi-images navicon"></i> <span data-i18n="t.005">Projects</span></a></li>
+                <li><a href="#contact"><i class="bi bi-envelope navicon"></i> <span data-i18n="t.006">Contact</span></a></li>
             </ul>
         </nav>
 
@@ -559,24 +627,20 @@ main.main.kitraz-site-ambience {
 
     <main class="main">
 
-        <!-- Hero Section -->
         <section id="hero" class="hero section dark-background">
 
             <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in" class="">
 
             <div class="container" data-aos="fade-up" data-aos-delay="100">
-                <h2>Ourvouai Louan</h2>
-                <p>I'm <span class="typed" data-typed-items="a Developer, an Engineer, a Scientist, a Traveler, a Gamer, Kitraz"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+                <h2 data-i18n="t.010">Ourvouai Louan</h2>
+                <p><span data-i18n="t.011">I'm</span> <span class="typed" data-typed-items="a Developer, an Engineer, a Scientist, a Traveler, a Gamer, Kitraz" data-i18n-typed="t.150"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
             </div>
 
-        </section><!-- /Hero Section -->
-        <!-- About Section -->
-        <section id="about" class="about section">
+        </section><section id="about" class="about section">
 
-            <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
-                <h2>About</h2>
-                <p>
+                <h2 data-i18n="t.012">About</h2>
+                <p data-i18n="t.013">
                     I’m Louan Ourvouai, a Unity gameplay engineer and ENSIIE (Paris–Évry) graduate,
                     an engineering school specialized in computer science and mathematics,
                     with a Graduate Engineer degree, JIN track (Video Games and Digital Interactions).
@@ -586,37 +650,35 @@ main.main.kitraz-site-ambience {
                     I enjoy contributing across the whole creation pipeline like visuals, sound, narrative,
                     and game design to help craft cohesive player experiences.
                 </p>
-            </div><!-- End Section Title -->
-
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
+            </div><div class="container" data-aos="fade-up" data-aos-delay="100">
 
                 <div class="row gy-4 justify-content-center">
                     <div class="col-lg-4">
                         <img src="assets/img/my-profile-img.jpg" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-8 content">
-                        <h2>Engineer Gameplay Developer &amp; Unity Developer.</h2>
-                        <p class="fst-italic py-3">
+                        <h2 data-i18n="t.014">Engineer Gameplay Developer & Unity Developer.</h2>
+                        <p class="fst-italic py-3" data-i18n="t.015">
                             I turn ideas into playable prototypes and production-ready gameplay systems in Unity,
                             focusing on game feel, clear communication, and clean architecture.
                         </p>
                         <div class="row">
                             <div class="col-lg-6">
                                 <ul>
-                                    <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>7 April 2000</span></li>
-                                    <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Goiânia, Goiás, Brazil</span></li>
-                                    <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>ourvouai.louan@gmail.com</span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong data-i18n="t.016">Birthday:</strong> <span data-i18n="t.017">7 April 2000</span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong data-i18n="t.018">City:</strong> <span data-i18n="t.019">Goiânia, Goiás, Brazil</span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong data-i18n="t.020">Email:</strong> <span data-i18n="t.021">ourvouai.louan@gmail.com</span></li>
                                 </ul>
                             </div>
                             <div class="col-lg-6">
                                 <ul>
-                                    <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>25</span></li>
-                                    <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Engineer</span></li>
-                                    <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>louan-ourvouai.github.io/portfolio/</span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong data-i18n="t.022">Age:</strong> <span data-i18n="t.023">25</span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong data-i18n="t.024">Degree:</strong> <span data-i18n="t.025">Engineer</span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong data-i18n="t.026">Website:</strong> <span data-i18n="t.027">louan-ourvouai.github.io/portfolio/</span></li>
                                 </ul>
                             </div>
                         </div>
-                        <p class="py-3">
+                        <p class="py-3" data-i18n="t.028">
                             I’m working toward a simple long-term vision: to build a stable career as a remote Gameplay Developer,
                             with a routine that lets me stay focused, consistent, and productive over the long run.
                             Remote work is important to me because it gives me the freedom to live in the European countryside,
@@ -628,130 +690,64 @@ main.main.kitraz-site-ambience {
 
             </div>
 
-        </section><!-- /About Section -->
-        <!-- Stats Section -->
-        <!--
-        <section id="stats" class="stats section">
+        </section><section id="skills" class="skills section light-background">
 
-          <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="row gy-4">
-
-              <div class="col-lg-3 col-md-6">
-                <div class="stats-item">
-                  <i class="bi bi-emoji-smile"></i>
-                  <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-                  <p><strong>Happy Clients</strong> <span>consequuntur quae</span></p>
-                </div>
-              </div> <!-- End Stats Item - ->
-
-          <div class="col-lg-3 col-md-6">
-              <div class="stats-item">
-                  <i class="bi bi-journal-richtext"></i>
-                  <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-                  <p><strong>Projects</strong> <span>adipisci atque cum quia aut</span></p>
-              </div>
-          </div><!-- End Stats Item - ->
-
-          <div class="col-lg-3 col-md-6">
-              <div class="stats-item">
-                  <i class="bi bi-headset"></i>
-                  <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
-                  <p><strong>Hours Of Support</strong> <span>aut commodi quaerat</span></p>
-              </div>
-          </div><!-- End Stats Item - ->
-
-          <div class="col-lg-3 col-md-6">
-              <div class="stats-item">
-                  <i class="bi bi-people"></i>
-                  <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
-                  <p><strong>Hard Workers</strong> <span>rerum asperiores dolor</span></p>
-              </div>
-          </div><!-- End Stats Item - ->
-          </div>
-
-          </div>
-
-          </section><!-- /Stats Section - ->
-          -->
-        <!-- Skills Section -->
-        <section id="skills" class="skills section light-background">
-
-            <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
-                <h2>Skills</h2>
-                <p>
+                <h2 data-i18n="t.029">Skills</h2>
+                <p data-i18n="t.030">
                     Built through professional experiences, formations, game jams, association projects, and personal game projects.
                 </p>
-            </div><!-- End Section Title -->
-
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
+            </div><div class="container" data-aos="fade-up" data-aos-delay="100">
 
                 <div class="row skills-content skills-animation">
 
                     <div class="col-lg-6">
 
                         <div class="progress">
-                            <span class="skill"><span>Unity</span> <i class="val">100%</i></span>
+                            <span class="skill"><span data-i18n="t.031">Unity</span> <i class="val" data-i18n="t.032">100%</i></span>
                             <div class="progress-bar-wrap">
                                 <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
-                        </div><!-- End Skills Item -->
-
-                        <div class="progress">
-                            <span class="skill"><span>Git</span> <i class="val">100%</i></span>
+                        </div><div class="progress">
+                            <span class="skill"><span data-i18n="t.033">Git</span> <i class="val" data-i18n="t.034">100%</i></span>
                             <div class="progress-bar-wrap">
                                 <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
-                        </div><!-- End Skills Item -->
-
-                        <div class="progress">
-                            <span class="skill"><span>Arduino</span> <i class="val">80%</i></span>
+                        </div><div class="progress">
+                            <span class="skill"><span data-i18n="t.035">Arduino</span> <i class="val" data-i18n="t.036">80%</i></span>
                             <div class="progress-bar-wrap">
                                 <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
-                        </div><!-- End Skills Item -->
-
-                        <div class="progress">
-                            <span class="skill"><span>Blender</span> <i class="val">50%</i></span>
+                        </div><div class="progress">
+                            <span class="skill"><span data-i18n="t.037">Blender</span> <i class="val" data-i18n="t.038">50%</i></span>
                             <div class="progress-bar-wrap">
                                 <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
-                        </div><!-- End Skills Item -->
-
-                    </div>
+                        </div></div>
 
                     <div class="col-lg-6">
 
                         <div class="progress">
-                            <span class="skill"><span>C#</span> <i class="val">100%</i></span>
+                            <span class="skill"><span data-i18n="t.039">C#</span> <i class="val" data-i18n="t.040">100%</i></span>
                             <div class="progress-bar-wrap">
                                 <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
-                        </div><!-- End Skills Item -->
-
-                        <div class="progress">
-                            <span class="skill"><span>C++</span> <i class="val">100%</i></span>
+                        </div><div class="progress">
+                            <span class="skill"><span data-i18n="t.041">C++</span> <i class="val" data-i18n="t.042">100%</i></span>
                             <div class="progress-bar-wrap">
                                 <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
-                        </div><!-- End Skills Item -->
-
-                        <div class="progress">
-                            <span class="skill"><span>Java</span> <i class="val">95%</i></span>
+                        </div><div class="progress">
+                            <span class="skill"><span data-i18n="t.043">Java</span> <i class="val" data-i18n="t.044">95%</i></span>
                             <div class="progress-bar-wrap">
                                 <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
-                        </div><!-- End Skills Item -->
-
-                        <div class="progress">
-                            <span class="skill"><span>React</span> <i class="val">80%</i></span>
+                        </div><div class="progress">
+                            <span class="skill"><span data-i18n="t.045">React</span> <i class="val" data-i18n="t.046">80%</i></span>
                             <div class="progress-bar-wrap">
                                 <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
-                        </div><!-- End Skills Item -->
-
-                    </div>
+                        </div></div>
 
                 </div>
             </div>
@@ -760,314 +756,267 @@ main.main.kitraz-site-ambience {
             <br>
             <br>
 
-            <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
-                <h2>Languages</h2>
-                <p>
+                <h2 data-i18n="t.047">Languages</h2>
+                <p data-i18n="t.048">
                     Built through travels and formations
                 </p>
-            </div><!-- End Section Title -->
-
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
+            </div><div class="container" data-aos="fade-up" data-aos-delay="100">
 
                 <div class="row skills-content skills-animation">
 
                     <div class="col-lg-6">
 
                         <div class="progress">
-                            <span class="skill"><span>French "Native"</span> <i class="val">100%</i></span>
+                            <span class="skill"><span data-i18n="t.049">French "Native"</span> <i class="val" data-i18n="t.050">100%</i></span>
                             <div class="progress-bar-wrap">
                                 <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
-                        </div><!-- End Skills Item -->
-
-                        <div class="progress">
-                            <span class="skill"><span>Portugese "A2"</span> <i class="val">60%</i></span>
+                        </div><div class="progress">
+                            <span class="skill"><span data-i18n="t.051">Portugese "A2"</span> <i class="val" data-i18n="t.052">60%</i></span>
                             <div class="progress-bar-wrap">
                                 <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
-                        </div><!-- End Skills Item -->
-
-                    </div>
+                        </div></div>
 
                     <div class="col-lg-6">
 
                         <div class="progress">
-                            <span class="skill"><span>English "C1 Certified"</span> <i class="val">90%</i></span>
+                            <span class="skill"><span data-i18n="t.053">English "C1 Certified"</span> <i class="val" data-i18n="t.054">90%</i></span>
                             <div class="progress-bar-wrap">
                                 <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
-                        </div><!-- End Skills Item -->
-
-                    </div>
+                        </div></div>
 
                 </div>
 
             </div>
 
-        </section><!-- /Skills Section -->
-        <!-- Resume Section -->
-        <section id="resume" class="resume section">
+        </section><section id="resume" class="resume section">
 
-            <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
-                <h2>Resume</h2>
-                <p>
+                <h2 data-i18n="t.055">Resume</h2>
+                <p data-i18n="t.056">
                     A snapshot of my CV highlighting my experience, education, and key projects as a Unity gameplay engineer.
                 </p>
-            </div><!-- End Section Title -->
-
-            <div class="container">
+            </div><div class="container">
 
                 <div class="row">
 
                     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                        <h3 class="resume-title">Professional Experiences</h3>
+                        <h3 class="resume-title" data-i18n="t.057">Professional Experiences</h3>
 
                         <div class="resume-item">
-                            <h4>Engineer — Lead Gameplay Developer</h4>
-                            <h5>Since December 2025</h5>
-                            <p><em>ELEVATE CORE LLC, Remote</em></p>
+                            <h4 data-i18n="t.058">Engineer — Lead Gameplay Developer</h4>
+                            <h5 data-i18n="t.059">Since December 2025</h5>
+                            <p><em data-i18n="t.060">ELEVATE CORE LLC, Remote</em></p>
                             <ul>
-                                <li>
+                                <li data-i18n="t.061">
                                     Developing the prototype of a mobile pet-care game in Unity, from core gameplay systems to a playable loop.
                                 </li>
-                                <li>
+                                <li data-i18n="t.062">
                                     Designing the game’s gameplay, progression, and overall game design.
                                 </li>
-                                <li>
+                                <li data-i18n="t.063">
                                     Implementing and maintaining wallet communication.
                                 </li>
                             </ul>
-                        </div><!-- Edn Resume Item -->
-
-                        <div class="resume-item">
-                            <h4>Engineer — Lead Gameplay Developer | Associate</h4>
-                            <h5>Since August 2024</h5>
-                            <p><em>Constellation Games, Remote</em></p>
+                        </div><div class="resume-item">
+                            <h4 data-i18n="t.064">Engineer — Lead Gameplay Developer | Associate</h4>
+                            <h5 data-i18n="t.065">Since August 2024</h5>
+                            <p><em data-i18n="t.066">Constellation Games, Remote</em></p>
                             <ul>
-                                <li>
+                                <li data-i18n="t.067">
                                     Development of a mobile RTS, first project of the Constellation
                                     Games studio.
                                 </li>
-                                <li>
+                                <li data-i18n="t.068">
                                     Involved across the full product lifecycle, from initial design
                                     through release.
                                 </li>
                             </ul>
-                        </div><!-- Edn Resume Item -->
-
-                        <div class="resume-item">
-                            <h4>
+                        </div><div class="resume-item">
+                            <h4 data-i18n="t.069">
                                 Software Engineer | Development and optimization of a C# /
                                 JavaScript framework, Microsoft Power Plateform
                             </h4>
-                            <h5>
+                            <h5 data-i18n="t.070">
                                 From March 2024 to
                                 August 2024
                             </h5>
                             <p>
-                                <em>
+                                <em data-i18n="t.071">
                                     End-of-Study Internship, DIMSI, Asnières-sur-Seine
                                 </em>
                             </p>
                             <ul>
-                                <li>XrmFramework mission: Built and documented new features</li>
-                                <li>
+                                <li data-i18n="t.072">XrmFramework mission: Built and documented new features</li>
+                                <li data-i18n="t.073">
                                     BackROLL mission: Created projects, wrote tests, and added
                                     functionality
                                 </li>
                             </ul>
-                        </div><!-- Edn Resume Item -->
-
-                        <div class="resume-item">
-                            <h4>
+                        </div><div class="resume-item">
+                            <h4 data-i18n="t.074">
                                 Interactive VR Training Content Developer
                             </h4>
-                            <h5>
+                            <h5 data-i18n="t.075">
                                 From June 2023 to
                                 August 2023
                             </h5>
                             <p>
-                                <em>
+                                <em data-i18n="t.076">
                                     2nd-year Internship, Farsight VR, Rennes
                                 </em>
                             </p>
                             <ul>
-                                <li>
+                                <li data-i18n="t.077">
                                     Polyvia mission: Built immersive VR training tools for plastics
                                     industry careers.
                                 </li>
-                                <li>
+                                <li data-i18n="t.078">
                                     Optima mission: Built a VR training course for the mediation
                                     profession.
                                 </li>
                             </ul>
-                        </div><!-- Edn Resume Item -->
-
-                        <div class="resume-item">
-                            <h4>
+                        </div><div class="resume-item">
+                            <h4 data-i18n="t.079">
                                 Unity VR Developer & Startup Creation
                             </h4>
-                            <h5>
+                            <h5 data-i18n="t.080">
                                 From June 2022 to
                                 July 2022
                             </h5>
                             <p>
-                                <em>
+                                <em data-i18n="t.081">
                                     1st-year Internship, C-19 Cluster (Games & Digital Interactions), Paris
                                 </em>
                             </p>
                             <ul>
-                                <li>
+                                <li data-i18n="t.082">
                                     Co-founded a startup named Vulpecula VR with C-19 support.
                                 </li>
                             </ul>
-                        </div><!-- Edn Resume Item -->
-
-                        <div class="resume-item">
-                            <h4>
+                        </div><div class="resume-item">
+                            <h4 data-i18n="t.083">
                                 Primary / Middle School Instructor
                             </h4>
-                            <h5>
+                            <h5 data-i18n="t.084">
                                 From September
                                 2024 to November
                                 2024
                             </h5>
                             <p>
-                                <em>
+                                <em data-i18n="t.085">
                                     Fun Tech Adventures, Paris
                                 </em>
                             </p>
                             <ul>
-                                <li>
+                                <li data-i18n="t.086">
                                     Led Digital Discovery sessions introducing pupils to computing
                                     and video-game creation using Scratch
                                 </li>
                             </ul>
-                        </div><!-- Edn Resume Item -->
-
-                    </div>
+                        </div></div>
 
                     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-                        <h3 class="resume-title">Education</h3>
+                        <h3 class="resume-title" data-i18n="t.087">Education</h3>
 
                         <div class="resume-item pb-0">
-                            <h4>
+                            <h4 data-i18n="t.088">
                                 Graduate Engineer, JIN track <br>
                                 (Video Games and Digital Interactions)
                             </h4>
-                            <h5>From September 2021 to May 2025</h5>
+                            <h5 data-i18n="t.090">From September 2021 to May 2025</h5>
                             <p>
-                                <em>
+                                <em data-i18n="t.091">
                                     ENSIIE Paris, France
                                 </em>
                             </p>
                             <ul>
-                                <li>Engineering school of Computer Science & Mathematics</li>
+                                <li data-i18n="t.092">Engineering school of Computer Science & Mathematics</li>
                             </ul>
-                        </div><!-- Edn Resume Item -->
-
-                        <div class="resume-item pb-0">
-                            <h4>
+                        </div><div class="resume-item pb-0">
+                            <h4 data-i18n="t.093">
                                 CPGE TSI
                             </h4>
-                            <h5>From September 2018 to June 2021</h5>
+                            <h5 data-i18n="t.094">From September 2018 to June 2021</h5>
                             <p>
-                                <em>
+                                <em data-i18n="t.095">
                                     Lycée Saint Joseph Lasalle Lorient | Lycée Léonce Vieljeux La Rochelle
                                 </em>
                             </p>
                             <ul>
-                                <li>Preparatory Class for Engineering & Industrial Sciences</li>
+                                <li data-i18n="t.096">Preparatory Class for Engineering & Industrial Sciences</li>
                             </ul>
-                        </div><!-- Edn Resume Item -->
-
-
-
-                        <h3 class="resume-title">School &amp; Personnal Experiences</h3>
+                        </div><h3 class="resume-title" data-i18n="t.097">School & Personnal Experiences</h3>
 
                         <div class="resume-item pb-0">
-                            <h4>
+                            <h4 data-i18n="t.098">
                                 Project - “Zeus Versus Humans”
                             </h4>
-                            <h5>From September 2023 to January 2024</h5>
+                            <h5 data-i18n="t.099">From September 2023 to January 2024</h5>
                             <p>
-                                <em>
+                                <em data-i18n="t.100">
                                     ENSIIE Paris, France
                                 </em>
                             </p>
                             <ul>
-                                <li>
+                                <li data-i18n="t.101">
                                     Final-year project: a 3D mobile game developed by a team of four
                                 </li>
                             </ul>
-                        </div><!-- Edn Resume Item -->
-
-                        <div class="resume-item pb-0">
-                            <h4>
+                        </div><div class="resume-item pb-0">
+                            <h4 data-i18n="t.102">
                                 Unity Developer - Game Jams
                             </h4>
-                            <h5>From 2021 to 2023</h5>
+                            <h5 data-i18n="t.103">From 2021 to 2023</h5>
                             <p>
-                                <em>
+                                <em data-i18n="t.104">
                                     ENSIIE Paris, France
                                 </em>
                             </p>
                             <ul>
-                                <li>UniJam 2023: Alter Maze</li>
-                                <li>GameJam Etiolles 2022: Archéollector</li>
-                                <li>Global Game Jam 2022: Chrono Switch</li>
-                                <li>UniJam 2021: From Scratch</li>
+                                <li data-i18n="t.105">UniJam 2023: Alter Maze</li>
+                                <li data-i18n="t.106">GameJam Etiolles 2022: Archéollector</li>
+                                <li data-i18n="t.107">Global Game Jam 2022: Chrono Switch</li>
+                                <li data-i18n="t.108">UniJam 2021: From Scratch</li>
                             </ul>
-                        </div><!-- Edn Resume Item -->
-
-                        <div class="resume-item pb-0">
-                            <h4>
+                        </div><div class="resume-item pb-0">
+                            <h4 data-i18n="t.109">
                                 Project — “Insect Identification via Machine Learning”
                             </h4>
-                            <h5>From September 2020 to June 2021</h5>
+                            <h5 data-i18n="t.110">From September 2020 to June 2021</h5>
                             <p>
-                                <em>
+                                <em data-i18n="t.111">
                                     TIPE individual La Rochelle
                                 </em>
                             </p>
                             <ul>
-                                <li>
+                                <li data-i18n="t.112">
                                     Introductory machine-learning project using the k-nearest neighbors method.
                                 </li>
                             </ul>
-                        </div><!-- Edn Resume Item -->
-
-
-
-                        <h3 class="resume-title">International &amp; Language Stays</h3>
+                        </div><h3 class="resume-title" data-i18n="t.113">International & Language Stays</h3>
                         <div class="resume-item pb-0">
                             <ul>
-                                <li>Goiânia, Brazil | 1 year | Personal stay</li>
-                                <li>Chicoutimi, Québec, Canada | 5 months | Exchange semester at UQAC</li>
-                                <li>Dublin, Ireland | 2 weeks | EC English Language Centres</li>
-                                <li>Berlin, Germany | 1 week | Highschool trip</li>
+                                <li data-i18n="t.114">Goiânia, Brazil | 1 year | Personal stay</li>
+                                <li data-i18n="t.115">Chicoutimi, Québec, Canada | 5 months | Exchange semester at UQAC</li>
+                                <li data-i18n="t.116">Dublin, Ireland | 2 weeks | EC English Language Centres</li>
+                                <li data-i18n="t.117">Berlin, Germany | 1 week | Highschool trip</li>
                             </ul>
-                        </div><!-- Edn Resume Item -->
-
-                    </div>
+                        </div></div>
 
                 </div>
 
             </div>
 
-        </section><!-- /Resume Section -->
-        <!-- Portfolio Section -->
-        <section id="portfolio" class="portfolio section light-background">
+        </section><section id="portfolio" class="portfolio section light-background">
 
-            <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
-                <h2>Projects</h2>
-                <p>Click a project to play it and discover what I built.</p>
-            </div><!-- End Section Title -->
-
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <h2 data-i18n="t.118">Projects</h2>
+                <p data-i18n="t.119">Click a project to play it and discover what I built.</p>
+            </div><div class="container" data-aos="fade-up" data-aos-delay="100">
                 <div class="row justify-content-center mb-5">
                     <div class="col-lg-8">
                         <div class="ratio ratio-16x9">
@@ -1081,366 +1030,111 @@ main.main.kitraz-site-ambience {
 
                 <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
 
-                    <!--
-                    <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-                        <li data-filter="*" class="filter-active">All</li>
-                        <li data-filter=".filter-app">App</li>
-                        <li data-filter=".filter-product">Product</li>
-                        <li data-filter=".filter-branding">Branding</li>
-                        <li data-filter=".filter-books">Books</li>
-                    </ul><!- - End Portfolio Filters - ->
-                                  -->
-
                     <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
                             <div class="portfolio-content h-100">
                                 <img src="assets/img/portfolio/ZeusVsHuman.png" class="img-fluid" alt="">
                                 <div class="portfolio-info">
-                                    <h4>Zeus Versus Humans</h4>
-                                    <p>Final-year project: a 3D mobile game developed by a team of four</p>
-                                    <!--<a href="assets/img/portfolio/app-1.jpg" title="Zeus Versus Humans" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>-->
+                                    <h4 data-i18n="t.120">Zeus Versus Humans</h4>
+                                    <p data-i18n="t.121">Final-year project: a 3D mobile game developed by a team of four</p>
                                     <a href="https://snibaw.itch.io/pfe" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                                 </div>
                             </div>
-                        </div><!-- End Portfolio Item -->
-
-
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                        </div><div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
                             <div class="portfolio-content h-100">
                                 <img src="assets/img/portfolio/AlterMaze.jpg" class="img-fluid" alt="">
                                 <div class="portfolio-info">
-                                    <h4>Alter Maze</h4>
-                                    <p>UniJam 2023</p>
-                                    <!--<a href="assets/img/portfolio/app-1.jpg" title="Zeus Versus Humans" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>-->
+                                    <h4 data-i18n="t.122">Alter Maze</h4>
+                                    <p data-i18n="t.123">UniJam 2023</p>
                                     <a href="https://mathieu-coutant.itch.io/alter-maze" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                                 </div>
                             </div>
-                        </div><!-- End Portfolio Item -->
-
-
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                        </div><div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
                             <div class="portfolio-content h-100">
                                 <img src="assets/img/portfolio/PourLaGloire.png" class="img-fluid" alt="">
                                 <div class="portfolio-info">
-                                    <h4>For Glory</h4>
-                                    <p>Personnal Project made in 2024</p>
-                                    <!--<a href="assets/img/portfolio/app-1.jpg" title="Zeus Versus Humans" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>-->
+                                    <h4 data-i18n="t.124">For Glory</h4>
+                                    <p data-i18n="t.125">Personnal Project made in 2024</p>
                                     <a href="https://kitraz.itch.io/pour-la-gloire" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                                 </div>
                             </div>
-                        </div><!-- End Portfolio Item -->
-
-
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                        </div><div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
                             <div class="portfolio-content h-100">
                                 <img src="assets/img/portfolio/Archeollector.png" class="img-fluid" alt="">
                                 <div class="portfolio-info">
-                                    <h4>Archeollector</h4>
-                                    <p>GameJam Etiolles 2022</p>
-                                    <!--<a href="assets/img/portfolio/app-1.jpg" title="Zeus Versus Humans" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>-->
+                                    <h4 data-i18n="t.126">Archeollector</h4>
+                                    <p data-i18n="t.127">GameJam Etiolles 2022</p>
                                     <a href="https://aikeon.itch.io/archeollector" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                                 </div>
                             </div>
-                        </div><!-- End Portfolio Item -->
-
-
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                        </div><div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
                             <div class="portfolio-content h-100">
                                 <img src="assets/img/portfolio/StellarRoad.avif" class="img-fluid" alt="">
                                 <div class="portfolio-info">
-                                    <h4>Stellar road</h4>
-                                    <p>1st-year Internship</p>
-                                    <!--<a href="assets/img/portfolio/app-1.jpg" title="Zeus Versus Humans" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>-->
+                                    <h4 data-i18n="t.128">Stellar road</h4>
+                                    <p data-i18n="t.129">1st-year Internship</p>
                                     <a href="https://www.youtube.com/watch?v=EnYLEAtRXpM" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                                 </div>
                             </div>
-                        </div><!-- End Portfolio Item -->
-
-
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                        </div><div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
                             <div class="portfolio-content h-100">
                                 <img src="assets/img/portfolio/ChronoSwitch.png" class="img-fluid" alt="">
                                 <div class="portfolio-info">
-                                    <h4>Chrono Switch</h4>
-                                    <p>Global Game Jam 2022</p>
-                                    <!--<a href="assets/img/portfolio/app-1.jpg" title="Zeus Versus Humans" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>-->
+                                    <h4 data-i18n="t.130">Chrono Switch</h4>
+                                    <p data-i18n="t.131">Global Game Jam 2022</p>
                                     <a href="https://gameretro.itch.io/chrono-switch" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                                 </div>
                             </div>
-                        </div><!-- End Portfolio Item -->
-
-
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                        </div><div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
                             <div class="portfolio-content h-100">
                                 <img src="assets/img/portfolio/FromScratch.png" class="img-fluid" alt="">
                                 <div class="portfolio-info">
-                                    <h4>From Scratch</h4>
-                                    <p>UniJam 2021 &amp; the 1st game I ever made</p>
-                                    <!--<a href="assets/img/portfolio/app-1.jpg" title="Zeus Versus Humans" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>-->
+                                    <h4 data-i18n="t.132">From Scratch</h4>
+                                    <p data-i18n="t.133">UniJam 2021 & the first game I ever made</p>
                                     <a href="https://aikeon.itch.io/from-scratch" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                                 </div>
                             </div>
-                        </div><!-- End Portfolio Item -->
-
-
-
-                    </div><!-- End Portfolio Container -->
-
-                </div>
+                        </div></div></div>
 
             </div>
 
-        </section><!-- /Portfolio Section -->
-        <!-- Services Section -->
-        <!--
-        <section id="services" class="services section">
+        </section><section id="contact" class="contact section">
 
-            <!- - Section Title - ->
-          <div class="container section-title" data-aos="fade-up">
-              <h2>Services</h2>
-              <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-          </div><!- - End Section Title - ->
-
-          <div class="container">
-
-              <div class="row gy-4">
-
-                  <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
-                      <div class="icon flex-shrink-0"><i class="bi bi-briefcase"></i></div>
-                      <div>
-                          <h4 class="title"><a href="service-details.html" class="stretched-link">Lorem Ipsum</a></h4>
-                          <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-                      </div>
-                  </div>
-                  <!- - End Service Item - ->
-
-                  <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
-                      <div class="icon flex-shrink-0"><i class="bi bi-card-checklist"></i></div>
-                      <div>
-                          <h4 class="title"><a href="service-details.html" class="stretched-link">Dolor Sitema</a></h4>
-                          <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-                      </div>
-                  </div><!- - End Service Item - ->
-
-                  <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
-                      <div class="icon flex-shrink-0"><i class="bi bi-bar-chart"></i></div>
-                      <div>
-                          <h4 class="title"><a href="service-details.html" class="stretched-link">Sed ut perspiciatis</a></h4>
-                          <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-                      </div>
-                  </div><!- - End Service Item - ->
-
-                  <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="400">
-                      <div class="icon flex-shrink-0"><i class="bi bi-binoculars"></i></div>
-                      <div>
-                          <h4 class="title"><a href="service-details.html" class="stretched-link">Magni Dolores</a></h4>
-                          <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                      </div>
-                  </div><!- - End Service Item - ->
-
-                  <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="500">
-                      <div class="icon flex-shrink-0"><i class="bi bi-brightness-high"></i></div>
-                      <div>
-                          <h4 class="title"><a href="service-details.html" class="stretched-link">Nemo Enim</a></h4>
-                          <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-                      </div>
-                  </div><!- - End Service Item - ->
-
-                  <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="600">
-                      <div class="icon flex-shrink-0"><i class="bi bi-calendar4-week"></i></div>
-                      <div>
-                          <h4 class="title"><a href="service-details.html" class="stretched-link">Eiusmod Tempor</a></h4>
-                          <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
-                      </div>
-                  </div><!- - End Service Item - ->
-
-              </div>
-
-          </div>
-
-          </section><!-- /Services Section - ->
-          -->
-        <!-- Testimonials Section -->
-        <!--
-        <section id="testimonials" class="testimonials section light-background">
-
-            <!- - Section Title - ->
             <div class="container section-title" data-aos="fade-up">
-                <h2>Testimonials</h2>
-                <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-            </div><!- - End Section Title - ->
-
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-                <div class="swiper init-swiper">
-                    <script type="application/json" class="swiper-config">
-                        {
-                          "loop": true,
-                          "speed": 600,
-                          "autoplay": {
-                            "delay": 5000
-                          },
-                          "slidesPerView": "auto",
-                          "pagination": {
-                            "el": ".swiper-pagination",
-                            "type": "bullets",
-                            "clickable": true
-                          },
-                          "breakpoints": {
-                            "320": {
-                              "slidesPerView": 1,
-                              "spaceBetween": 40
-                            },
-                            "1200": {
-                              "slidesPerView": 3,
-                              "spaceBetween": 1
-                            }
-                          }
-                        }
-                    </script>
-                    <div class="swiper-wrapper">
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <p>
-                                    <i class="bi bi-quote quote-icon-left"></i>
-                                    <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
-                                    <i class="bi bi-quote quote-icon-right"></i>
-                                </p>
-                                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                                <h3>Saul Goodman</h3>
-                                <h4>Ceo &amp; Founder</h4>
-                            </div>
-                        </div><!- - End testimonial item - ->
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <p>
-                                    <i class="bi bi-quote quote-icon-left"></i>
-                                    <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
-                                    <i class="bi bi-quote quote-icon-right"></i>
-                                </p>
-                                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                                <h3>Sara Wilsson</h3>
-                                <h4>Designer</h4>
-                            </div>
-                        </div><!- - End testimonial item - ->
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <p>
-                                    <i class="bi bi-quote quote-icon-left"></i>
-                                    <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
-                                    <i class="bi bi-quote quote-icon-right"></i>
-                                </p>
-                                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                                <h3>Jena Karlis</h3>
-                                <h4>Store Owner</h4>
-                            </div>
-                        </div><!- - End testimonial item - ->
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <p>
-                                    <i class="bi bi-quote quote-icon-left"></i>
-                                    <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
-                                    <i class="bi bi-quote quote-icon-right"></i>
-                                </p>
-                                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                                <h3>Matt Brandon</h3>
-                                <h4>Freelancer</h4>
-                            </div>
-                        </div><!- - End testimonial item - ->
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <p>
-                                    <i class="bi bi-quote quote-icon-left"></i>
-                                    <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.</span>
-                                    <i class="bi bi-quote quote-icon-right"></i>
-                                </p>
-                                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                                <h3>John Larson</h3>
-                                <h4>Entrepreneur</h4>
-                            </div>
-                        </div><!- - End testimonial item - ->
-
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div>
-
-            </div>
-
-        </section><!- - /Testimonials Section - ->
-        -->
-        <!-- Contact Section -->
-        <section id="contact" class="contact section">
-
-            <!-- Section Title -->
-            <div class="container section-title" data-aos="fade-up">
-                <h2>Contact</h2>
-                <p>For opportunities, collaborations, or questions, feel free to contact me</p>
-            </div><!-- End Section Title -->
-
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <h2 data-i18n="t.134">Contact</h2>
+                <p data-i18n="t.135">For opportunities, collaborations, or questions, feel free to contact me</p>
+            </div><div class="container" data-aos="fade-up" data-aos-delay="100">
 
                 <div class="row gy-4">
 
                     <div class="col-lg-5">
 
                         <div class="info-wrap">
-                            <!--
-                            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-                                <i class="bi bi-geo-alt flex-shrink-0"></i>
-                                <div>
-                                    <h3>Address</h3>
-                                    <p>A108 Adam Street, New York, NY 535022</p>
-                                </div>
-                            </div><!- - End Info Item - ->
-
-
-                            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-                                <i class="bi bi-telephone flex-shrink-0"></i>
-                                <div>
-                                    <h3>Call Us</h3>
-                                    <p>+1 5589 55488 55</p>
-                                </div>
-                            </div><!- - End Info Item - ->
-                            -->
-
                             <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
                                 <i class="bi bi-envelope flex-shrink-0"></i>
                                 <div>
-                                    <h3>Email me</h3>
-                                    <p>ourvouai.louan@gmail.com</p>
+                                    <h3 data-i18n="t.136">Email me</h3>
+                                    <p data-i18n="t.137">ourvouai.louan@gmail.com</p>
                                 </div>
-                            </div><!-- End Info Item -->
-
-                            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="450">
+                            </div><div class="info-item d-flex" data-aos="fade-up" data-aos-delay="450">
                                 <i class="bi bi-linkedin flex-shrink-0"></i>
                                 <div>
-                                    <h3>LinkedIn</h3>
+                                    <h3 data-i18n="t.138">LinkedIn</h3>
                                     <p>
                                         <a href="https://www.linkedin.com/in/louan-ourvouai-96bb15218/"
-                                           target="_blank" rel="noopener noreferrer">
+                                           target="_blank" rel="noopener noreferrer" data-i18n="t.139">
                                             louan-ourvouai
                                         </a>
                                     </p>
                                 </div>
-                            </div><!-- End Info Item -->
-
-                            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+                            </div><div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
                                 <i class="bi bi-discord flex-shrink-0"></i>
                                 <div>
-                                    <h3>Discord</h3>
-                                    <p>thekitraz</p>
+                                    <h3 data-i18n="t.140">Discord</h3>
+                                    <p data-i18n="t.141">thekitraz</p>
                                 </div>
-                            </div><!-- End Info Item -->
-                            <!--
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                            -->
-                        </div>
+                            </div></div>
                     </div>
 
                     <div class="col-lg-7">
@@ -1448,12 +1142,12 @@ main.main.kitraz-site-ambience {
                             <div class="row gy-4">
 
                                 <div class="col-md-12">
-                                    <label for="subject-field" class="pb-2">Subject</label>
+                                    <label for="subject-field" class="pb-2" data-i18n="t.142">Subject</label>
                                     <input type="text" class="form-control" name="subject" id="subject-field" required>
                                 </div>
 
                                 <div class="col-md-12">
-                                    <label for="message-field" class="pb-2">Message</label>
+                                    <label for="message-field" class="pb-2" data-i18n="t.143">Message</label>
                                     <textarea class="form-control" name="message" rows="10" id="message-field" required>Hello Louan,
 
 [Your message]
@@ -1463,45 +1157,32 @@ Best regards,
                                 </div>
 
                                 <div class="col-md-12 text-center">
-                                    <button type="submit">Send Mail</button>
+                                    <button type="submit" data-i18n="t.144">Send Mail</button>
                                 </div>
 
                             </div>
                         </form>
-                    </div><!-- End Contact Form -->
-
-
-                </div>
+                    </div></div>
 
             </div>
 
-        </section><!-- /Contact Section -->
-
-    </main>
+        </section></main>
 
     <footer id="footer" class="footer position-relative light-background">
 
         <div class="container">
             <div class="credits">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you've purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a>
+                <span data-i18n="t.145">Designed by</span> <a href="https://bootstrapmade.com/" data-i18n="t.146">BootstrapMade</a> <span data-i18n="t.147">Distributed by</span> <a href="https://themewagon.com" data-i18n="t.148">ThemeWagon</a>
             </div>
         </div>
 
     </footer>
 
-    <!-- Scroll Top -->
     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-    <!-- Preloader -->
     <div id="preloader"></div>
 
-    <!-- Vendor JS Files -->
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!--<script src="assets/vendor/php-email-form/validate.js"></script>-->
     <script src="assets/vendor/aos/aos.js"></script>
     <script src="assets/vendor/typed.js/typed.umd.js"></script>
     <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -1511,7 +1192,6 @@ Best regards,
     <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-    <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
 
 
@@ -1536,8 +1216,211 @@ Best regards,
         })();
     </script>
 
+    <script>
+        (function() {
+            // === EMBEDDED TRANSLATIONS TO AVOID FETCH/CORS ISSUES ===
+            const translations = {
+                "en": {
+                    "__meta": { "title": "Ourvouai Louan - Portfolio" },
+                    "t.001": "Ourvouai Louan", "t.002": "Home", "t.003": "About", "t.004": "Resume", "t.005": "Projects", "t.006": "Contact", "t.007": "Português (Brasil)", "t.008": "English", "t.009": "Français", "t.010": "Ourvouai Louan", "t.011": "I'm", "t.012": "About",
+                    "t.013": "I’m Louan Ourvouai, a Unity gameplay engineer and ENSIIE (Paris–Évry) graduate, an engineering school specialized in computer science and mathematics, with a Graduate Engineer degree, JIN track (Video Games and Digital Interactions). I’ve built Unity projects across mobile, VR, Windows, and macOS, covering genres such as RTS, FPS/TPS, idle, 2D platformers, and serious games. I previously led the development of a mobile RTS, and I’m currently leading a pet-care mobile game project. Beyond programming, I enjoy contributing across the whole creation pipeline—visuals, sound, narrative, and game design—to help craft cohesive player experiences.",
+                    "t.014": "Engineer Gameplay Developer & Unity Developer.", "t.015": "I turn ideas into playable prototypes and production-ready gameplay systems in Unity, focusing on game feel, clear communication, and clean architecture.",
+                    "t.016": "Birthday:", "t.017": "7 April 2000", "t.018": "City:", "t.019": "Goiânia, Goiás, Brazil", "t.020": "Email:", "t.021": "ourvouai.louan@gmail.com", "t.022": "Age:", "t.023": "25", "t.024": "Degree:", "t.025": "Engineer", "t.026": "Website:", "t.027": "louan-ourvouai.github.io/portfolio/",
+                    "t.028": "I’m working toward a simple long-term vision: building a stable career as a remote Gameplay Developer, with a routine that helps me stay focused, consistent, and productive over the long run. Remote work matters to me because it supports a healthier pace, long-term sustainability, and smooth collaboration with a team through clear communication, good documentation, and reliable delivery.",
+                    "t.029": "Skills", "t.030": "Built through professional experiences, formations, game jams, association projects, and personal game projects.",
+                    "t.031": "Unity", "t.032": "100%", "t.033": "Git", "t.034": "100%", "t.035": "Arduino", "t.036": "80%", "t.037": "Blender", "t.038": "50%", "t.039": "C#", "t.040": "100%", "t.041": "C++", "t.042": "100%", "t.043": "Java", "t.044": "95%", "t.045": "React", "t.046": "80%",
+                    "t.047": "Languages", "t.048": "Built through travels and formations", "t.049": "French \"Native\"", "t.050": "100%", "t.051": "Portuguese \"A2\"", "t.052": "60%", "t.053": "English \"C1 Certified\"", "t.054": "90%",
+                    "t.055": "Resume", "t.056": "A snapshot of my CV highlighting my experience, education, and key projects as a Unity gameplay engineer.",
+                    "t.057": "Professional Experiences", "t.058": "Engineer — Lead Gameplay Developer", "t.059": "Since December 2025", "t.060": "ELEVATE CORE LLC, Remote",
+                    "t.061": "Developing the prototype of a mobile pet-care game in Unity, from core gameplay systems to a playable loop.",
+                    "t.062": "Designing the game’s gameplay, progression, and overall game design.", "t.063": "Implementing and maintaining wallet communication.",
+                    "t.064": "Engineer — Lead Gameplay Developer | Associate", "t.065": "Since August 2024", "t.066": "Constellation Games, Remote",
+                    "t.067": "Development of a mobile RTS, first project of the Constellation Games studio.", "t.068": "Involved across the full product lifecycle, from initial design through release.",
+                    "t.069": "Software Engineer | Development and optimization of a C# / JavaScript framework, Microsoft Power Plateform", "t.070": "From March 2024 to August 2024", "t.071": "End-of-Study Internship, DIMSI, Asnières-sur-Seine",
+                    "t.072": "XrmFramework mission: Built and documented new features", "t.073": "BackROLL mission: Created projects, wrote tests, and added functionality",
+                    "t.074": "Interactive VR Training Content Developer", "t.075": "From June 2023 to August 2023", "t.076": "2nd-year Internship, Farsight VR, Rennes",
+                    "t.077": "Polyvia mission: Built immersive VR training tools for plastics industry careers.", "t.078": "Optima mission: Built a VR training course for the mediation profession.",
+                    "t.079": "Unity VR Developer & Startup Creation", "t.080": "From June 2022 to July 2022", "t.081": "1st-year Internship, C-19 Cluster (Games & Digital Interactions), Paris", "t.082": "Co-founded a startup named Vulpecula VR with C-19 support.",
+                    "t.083": "Primary / Middle School Instructor", "t.084": "From September 2024 to November 2024", "t.085": "Fun Tech Adventures, Paris", "t.086": "Led Digital Discovery sessions introducing pupils to computing and video-game creation using Scratch",
+                    "t.087": "Education", "t.088": "Graduate Engineer, JIN track", "t.089": "(Video Games and Digital Interactions)", "t.090": "From September 2021 to May 2025", "t.091": "ENSIIE Paris, France", "t.092": "Engineering school of Computer Science & Mathematics",
+                    "t.093": "CPGE TSI", "t.094": "From September 2018 to June 2021", "t.095": "Lycée Saint Joseph Lasalle Lorient | Lycée Léonce Vieljeux La Rochelle", "t.096": "Preparatory Class for Engineering & Industrial Sciences",
+                    "t.097": "School & Personal Experiences", "t.098": "Project - “Zeus Versus Humans”", "t.099": "From September 2023 to January 2024", "t.100": "ENSIIE Paris, France", "t.101": "Final-year project: a 3D mobile game developed by a team of four",
+                    "t.102": "Unity Developer - Game Jams", "t.103": "From 2021 to 2023", "t.104": "ENSIIE Paris, France", "t.105": "UniJam 2023: Alter Maze", "t.106": "GameJam Etiolles 2022: Archéollector", "t.107": "Global Game Jam 2022: Chrono Switch", "t.108": "UniJam 2021: From Scratch",
+                    "t.109": "Project — “Insect Identification via Machine Learning”", "t.110": "From September 2020 to June 2021", "t.111": "TIPE individual La Rochelle", "t.112": "Introductory machine-learning project using the k-nearest neighbors method.",
+                    "t.113": "International & Language Stays", "t.114": "Goiânia, Brazil | 1 year | Personal stay", "t.115": "Chicoutimi, Québec, Canada | 5 months | Exchange semester at UQAC", "t.116": "Dublin, Ireland | 2 weeks | EC English Language Centres", "t.117": "Berlin, Germany | 1 week | Highschool trip",
+                    "t.118": "Projects", "t.119": "Click a project to play it and discover what I built.", "t.120": "Zeus Versus Humans", "t.121": "Final-year project: a 3D mobile game developed by a team of four", "t.122": "Alter Maze", "t.123": "UniJam 2023", "t.124": "For Glory", "t.125": "Personal Project made in 2024", "t.126": "Archeollector", "t.127": "GameJam Etiolles 2022", "t.128": "Stellar road", "t.129": "1st-year Internship", "t.130": "Chrono Switch", "t.131": "Global Game Jam 2022", "t.132": "From Scratch", "t.133": "UniJam 2021 & the first game I ever made",
+                    "t.134": "Contact", "t.135": "For opportunities, collaborations, or questions, feel free to contact me", "t.136": "Email me", "t.137": "ourvouai.louan@gmail.com", "t.138": "LinkedIn", "t.139": "louan-ourvouai", "t.140": "Discord", "t.141": "thekitraz", "t.142": "Subject", "t.143": "Message", "t.144": "Send Mail", "t.145": "Designed by", "t.146": "BootstrapMade", "t.147": "Distributed by", "t.148": "ThemeWagon",
+                    "t.149": "Hello Louan, Best regards,",
+                    "t.150": "a Developer, an Engineer, a Scientist, a Traveler, a Gamer, Kitraz"
+                },
+                "fr": {
+                    "__meta": { "title": "Ourvouai Louan - Portfolio" },
+                    "t.001": "Ourvouai Louan", "t.002": "Accueil", "t.003": "À propos", "t.004": "CV", "t.005": "Projets", "t.006": "Contact", "t.007": "Português (Brasil)", "t.008": "English", "t.009": "Français", "t.010": "Ourvouai Louan", "t.011": "Je suis", "t.012": "À propos",
+                    "t.013": "Je suis Louan Ourvouai, ingénieur gameplay Unity et diplômé de l’ENSIIE (Paris–Évry), une école d’ingénieurs spécialisée en informatique et en mathématiques, avec un diplôme d’ingénieur, parcours JIN (Jeux vidéo et interactions numériques). J’ai réalisé des projets Unity sur mobile, VR, Windows et macOS, couvrant des genres comme le RTS, le FPS/TPS, l’idle, les platformers 2D et les serious games. J’ai auparavant dirigé le développement d’un RTS mobile et je dirige actuellement un projet de jeu mobile de soin d’animaux. Au-delà de la programmation, j’aime contribuer à l’ensemble du pipeline de création — visuels, son, narration et game design — pour aider à créer des expériences cohérentes pour les joueurs.",
+                    "t.014": "Ingénieur Gameplay & Développeur Unity.", "t.015": "Je transforme des idées en prototypes jouables et en systèmes de gameplay prêts pour la production sous Unity, en mettant l’accent sur le game feel, une communication claire et une architecture propre.",
+                    "t.016": "Date de naissance :", "t.017": "7 avril 2000", "t.018": "Ville :", "t.019": "Goiânia, Goiás, Brésil", "t.020": "E-mail :", "t.021": "ourvouai.louan@gmail.com", "t.022": "Âge :", "t.023": "25", "t.024": "Diplôme :", "t.025": "Ingénieur", "t.026": "Site :", "t.027": "louan-ourvouai.github.io/portfolio/",
+                    "t.028": "Je poursuis une vision simple à long terme : construire une carrière stable en tant que Gameplay Developer en remote, avec une routine qui m’aide à rester concentré, constant et productif sur la durée. Le travail à distance est important pour moi car il favorise un rythme plus sain, une durabilité sur le long terme et une collaboration fluide avec une équipe grâce à une communication claire, une bonne documentation et une livraison fiable.",
+                    "t.029": "Compétences", "t.030": "Construit grâce à mes expériences professionnelles, formations, game jams, projets associatifs et projets personnels.",
+                    "t.031": "Unity", "t.032": "100%", "t.033": "Git", "t.034": "100%", "t.035": "Arduino", "t.036": "80%", "t.037": "Blender", "t.038": "50%", "t.039": "C#", "t.040": "100%", "t.041": "C++", "t.042": "100%", "t.043": "Java", "t.044": "95%", "t.045": "React", "t.046": "80%",
+                    "t.047": "Langues", "t.048": "Forgé par les voyages et les formations", "t.049": "Français \"natif\"", "t.050": "100%", "t.051": "Portugais \"A2\"", "t.052": "60%", "t.053": "Anglais \"C1 certifié\"", "t.054": "90%",
+                    "t.055": "CV", "t.056": "Un aperçu de mon CV mettant en avant mon expérience, ma formation et mes projets clés en tant qu’ingénieur gameplay Unity.",
+                    "t.057": "Expériences professionnelles", "t.058": "Ingénieur — Lead Gameplay Developer", "t.059": "Depuis décembre 2025", "t.060": "ELEVATE CORE LLC, Télétravail",
+                    "t.061": "Développement du prototype d’un jeu mobile de soin d’animaux sous Unity, des systèmes de gameplay clés jusqu’à une boucle jouable.",
+                    "t.062": "Conception du gameplay, de la progression et du game design global du jeu.", "t.063": "Implémentation et maintenance de la communication du wallet.",
+                    "t.064": "Ingénieur — Lead Gameplay Developer | Associé", "t.065": "Depuis août 2024", "t.066": "Constellation Games, Télétravail",
+                    "t.067": "Développement d’un RTS mobile, premier projet du studio Constellation Games.", "t.068": "Implication sur tout le cycle de vie produit, de la conception initiale jusqu’à la sortie.",
+                    "t.069": "Ingénieur logiciel | Développement et optimisation d’un framework C# / JavaScript, Microsoft Power Platform", "t.070": "De mars 2024 à août 2024", "t.071": "Stage de fin d’études, DIMSI, Asnières-sur-Seine",
+                    "t.072": "Mission XrmFramework : développement et documentation de nouvelles fonctionnalités", "t.073": "Mission BackROLL : création de projets, écriture de tests et ajout de fonctionnalités",
+                    "t.074": "Développeur de contenus de formation VR interactifs", "t.075": "De juin 2023 à août 2023", "t.076": "Stage de 2e année, Farsight VR, Rennes",
+                    "t.077": "Mission Polyvia : création d’outils immersifs de formation VR pour les métiers de l’industrie plastique.", "t.078": "Mission Optima : création d’une formation VR pour le métier de médiateur.",
+                    "t.079": "Développeur Unity VR & création de startup", "t.080": "De juin 2022 à juillet 2022", "t.081": "Stage de 1re année, Pôle C-19 (Jeux & interactions numériques), Paris", "t.082": "Cofondation d’une startup nommée Vulpecula VR avec le soutien de C-19.",
+                    "t.083": "Intervenant primaire / collège", "t.084": "De septembre 2024 à novembre 2024", "t.085": "Fun Tech Adventures, Paris", "t.086": "Animation de sessions « Digital Discovery » pour initier les élèves à l’informatique et à la création de jeux vidéo avec Scratch.",
+                    "t.087": "Formation", "t.088": "Diplôme d’ingénieur, parcours JIN", "t.089": "(Jeux vidéo et interactions numériques)", "t.090": "De septembre 2021 à mai 2025", "t.091": "ENSIIE, Paris, France", "t.092": "École d’ingénieurs en informatique et mathématiques",
+                    "t.093": "CPGE TSI", "t.094": "De septembre 2018 à juin 2021", "t.095": "Lycée Saint Joseph Lasalle Lorient | Lycée Léonce Vieljeux La Rochelle", "t.096": "Classe préparatoire aux études d’ingénieur et aux sciences industrielles",
+                    "t.097": "Expériences scolaires & personnelles", "t.098": "Projet — « Zeus Versus Humans »", "t.099": "De septembre 2023 à janvier 2024", "t.100": "ENSIIE, Paris, France", "t.101": "Projet de fin d’études : jeu mobile 3D développé en équipe de quatre",
+                    "t.102": "Développeur Unity — Game Jams", "t.103": "De 2021 à 2023", "t.104": "ENSIIE, Paris, France", "t.105": "UniJam 2023: Alter Maze", "t.106": "GameJam Etiolles 2022: Archéollector", "t.107": "Global Game Jam 2022: Chrono Switch", "t.108": "UniJam 2021: From Scratch",
+                    "t.109": "Projet — « Identification d’insectes via l’apprentissage automatique »", "t.110": "De septembre 2020 à juin 2021", "t.111": "TIPE individuel, La Rochelle", "t.112": "Projet d’initiation au machine learning utilisant la méthode des k plus proches voisins.",
+                    "t.113": "Séjours internationaux & linguistiques", "t.114": "Goiânia, Brésil | 1 an | Séjour personnel", "t.115": "Chicoutimi, Québec, Canada | 5 mois | Semestre d’échange à l’UQAC", "t.116": "Dublin, Irlande | 2 semaines | EC English Language Centres", "t.117": "Berlin, Allemagne | 1 semaine | Voyage scolaire",
+                    "t.118": "Projets", "t.119": "Cliquez sur un projet pour y jouer et découvrir ce que j’ai créé.", "t.120": "Zeus Versus Humans", "t.121": "Projet de fin d’études : jeu mobile 3D développé en équipe de quatre", "t.122": "Alter Maze", "t.123": "UniJam 2023", "t.124": "For Glory", "t.125": "Projet personnel réalisé en 2024", "t.126": "Archeollector", "t.127": "GameJam Étiolles 2022", "t.128": "Stellar road", "t.129": "Stage de 1re année", "t.130": "Chrono Switch", "t.131": "Global Game Jam 2022", "t.132": "From Scratch", "t.133": "UniJam 2021 & le premier jeu que j’ai créé",
+                    "t.134": "Contact", "t.135": "Pour des opportunités, des collaborations ou des questions, n’hésitez pas à me contacter.", "t.136": "M’envoyer un e-mail", "t.137": "ourvouai.louan@gmail.com", "t.138": "LinkedIn", "t.139": "louan-ourvouai", "t.140": "Discord", "t.141": "thekitraz", "t.142": "Objet", "t.143": "Message", "t.144": "Envoyer", "t.145": "Conçu par", "t.146": "BootstrapMade", "t.147": "Distribué par", "t.148": "ThemeWagon",
+                    "t.149": "Bonjour Louan,\n\n\nBien cordialement,",
+                    "t.150": "un Développeur, un Ingénieur, un Scientifique, un Voyageur, un Gamer, Kitraz"
+                },
+                "pt-br": {
+                    "__meta": { "title": "Ourvouai Louan - Portfólio" },
+                    "t.001": "Ourvouai Louan", "t.002": "Início", "t.003": "Sobre", "t.004": "Currículo", "t.005": "Projetos", "t.006": "Contato", "t.007": "Português (Brasil)", "t.008": "English", "t.009": "Français", "t.010": "Ourvouai Louan", "t.011": "Eu sou", "t.012": "Sobre",
+                    "t.013": "Sou Louan Ourvouai, engenheiro de gameplay Unity e graduado pela ENSIIE (Paris–Évry), uma escola de engenharia especializada em ciência da computação e matemática, com diploma de engenheiro, trilha JIN (Jogos e Interações Digitais). Desenvolvi projetos Unity para mobile, VR, Windows e macOS, cobrindo gêneros como RTS, FPS/TPS, idle, plataforma 2D e serious games. Já liderei o desenvolvimento de um RTS mobile e atualmente lidero um projeto de jogo mobile de cuidado de pets. Além da programação, gosto de contribuir em todo o pipeline de criação — visual, som, narrativa e game design — para ajudar a criar experiências coesas para os jogadores.",
+                    "t.014": "Engenheiro de Gameplay e Desenvolvedor Unity.", "t.015": "Transformo ideias em protótipos jogáveis e sistemas de gameplay prontos para produção no Unity, com foco em game feel, comunicação clara e uma arquitetura limpa.",
+                    "t.016": "Data de nascimento:", "t.017": "7 de abril de 2000", "t.018": "Cidade:", "t.019": "Goiânia, Goiás, Brasil", "t.020": "E-mail:", "t.021": "ourvouai.louan@gmail.com", "t.022": "Idade:", "t.023": "25", "t.024": "Diploma:", "t.025": "Engenheiro", "t.026": "Site:", "t.027": "louan-ourvouai.github.io/portfolio/",
+                    "t.028": "Estou buscando uma visão simples de longo prazo: construir uma carreira estável como Desenvolvedor de Gameplay remoto, com uma rotina que me ajude a manter foco, consistência e produtividade ao longo do tempo. O trabalho remoto é importante para mim porque permite um ritmo mais saudável, sustentabilidade a longo prazo e uma colaboração fluida com o time por meio de comunicação clara, boa documentação e entregas confiáveis.",
+                    "t.029": "Habilidades", "t.030": "Construído por experiências profissionais, formações, game jams, projetos associativos e projetos pessoais.",
+                    "t.031": "Unity", "t.032": "100%", "t.033": "Git", "t.034": "100%", "t.035": "Arduino", "t.036": "80%", "t.037": "Blender", "t.038": "50%", "t.039": "C#", "t.040": "100%", "t.041": "C++", "t.042": "100%", "t.043": "Java", "t.044": "95%", "t.045": "React", "t.046": "80%",
+                    "t.047": "Idiomas", "t.048": "Construído por viagens e formações", "t.049": "Francês \"nativo\"", "t.050": "100%", "t.051": "Português \"A2\"", "t.052": "60%", "t.053": "Inglês \"C1 (certificado)\"", "t.054": "90%",
+                    "t.055": "Currículo", "t.056": "Uma visão geral do meu CV destacando minha experiência, formação e principais projetos como engenheiro de gameplay Unity.",
+                    "t.057": "Experiência profissional", "t.058": "Engenheiro — Lead Gameplay Developer", "t.059": "Desde dezembro de 2025", "t.060": "ELEVATE CORE LLC, Remoto",
+                    "t.061": "Desenvolvendo o protótipo de um jogo mobile de cuidado de pets no Unity, dos sistemas centrais de gameplay até um loop jogável.",
+                    "t.062": "Desenvolvendo o gameplay, a progressão e o game design geral do jogo.", "t.063": "Implementação e manutenção da comunicação da wallet.",
+                    "t.064": "Engenheiro — Lead Gameplay Developer | Sócio", "t.065": "Desde agosto de 2024", "t.066": "Constellation Games, Remoto",
+                    "t.067": "Desenvolvimento de um RTS mobile, primeiro projeto do estúdio Constellation Games.", "t.068": "Atuei em todo o ciclo de vida do produto, do design inicial ao lançamento.",
+                    "t.069": "Engenheiro de software | Desenvolvimento e otimização de um framework em C# / JavaScript, Microsoft Power Platform", "t.070": "De março de 2024 a agosto de 2024", "t.071": "Estágio de fim de curso, DIMSI, Asnières-sur-Seine",
+                    "t.072": "Missão XrmFramework: desenvolvi e documentei novas funcionalidades", "t.073": "Missão BackROLL: criei projetos, escrevi testes e adicionei funcionalidades",
+                    "t.074": "Desenvolvedor de conteúdo interativo de treinamento em VR", "t.075": "De junho de 2023 a agosto de 2023", "t.076": "Estágio do 2º ano, Farsight VR, Rennes",
+                    "t.077": "Missão Polyvia: criei ferramentas imersivas de treinamento em VR para carreiras na indústria de plásticos.", "t.078": "Missão Optima: criei um curso de treinamento em VR para a profissão de mediação.",
+                    "t.079": "Desenvolvedor Unity VR e criação de startup", "t.080": "De junho de 2022 a julho de 2022", "t.081": "Estágio do 1º ano, Cluster C-19 (Jogos & Interações Digitais), Paris", "t.082": "Cofundei uma startup chamada Vulpecula VR com apoio do C-19.",
+                    "t.083": "Instrutor do ensino fundamental I / II", "t.084": "De setembro de 2024 a novembro de 2024", "t.085": "Fun Tech Adventures, Paris", "t.086": "Conduzi sessões de Digital Discovery apresentando aos alunos computação e criação de jogos com Scratch.",
+                    "t.087": "Formação", "t.088": "Diploma de engenheiro, trilha JIN", "t.089": "(Jogos e Interações Digitais)", "t.090": "De setembro de 2021 a maio de 2025", "t.091": "ENSIIE, Paris, França", "t.092": "Escola de engenharia em Ciência da Computação e Matemática",
+                    "t.093": "CPGE TSI", "t.094": "De setembro de 2018 a junho de 2021", "t.095": "Lycée Saint Joseph Lasalle Lorient | Lycée Léonce Vieljeux La Rochelle", "t.096": "Classe preparatória para Engenharia e Ciências Industriais",
+                    "t.097": "Experiências acadêmicas e pessoais", "t.098": "Projeto — “Zeus Versus Humans”", "t.099": "De setembro de 2023 a janeiro de 2024", "t.100": "ENSIIE, Paris, França", "t.101": "Projeto de fim de curso: jogo mobile 3D desenvolvido por uma equipe de quatro",
+                    "t.102": "Desenvolvedor Unity — Game Jams", "t.103": "De 2021 a 2023", "t.104": "ENSIIE, Paris, França", "t.105": "UniJam 2023: Alter Maze", "t.106": "GameJam Etiolles 2022: Archéollector", "t.107": "Global Game Jam 2022: Chrono Switch", "t.108": "UniJam 2021: From Scratch",
+                    "t.109": "Projeto — “Identificação de insetos via aprendizado de máquina”", "t.110": "De setembro de 2020 a junho de 2021", "t.111": "TIPE individual, La Rochelle", "t.112": "Projeto introdutório de machine learning usando o método k-NN (k vizinhos mais próximos).",
+                    "t.113": "Intercâmbios e estadias linguísticas", "t.114": "Goiânia, Brasil | 1 ano | Estadia pessoal", "t.115": "Chicoutimi, Québec, Canadá | 5 meses | Semestre de intercâmbio na UQAC", "t.116": "Dublin, Irlanda | 2 semanas | EC English Language Centres", "t.117": "Berlim, Alemanha | 1 semana | Viagem escolar",
+                    "t.118": "Projetos", "t.119": "Clique em um projeto para jogar e ver o que eu criei.", "t.120": "Zeus Versus Humans", "t.121": "Projeto de fim de curso: jogo mobile 3D desenvolvido por uma equipe de quatro", "t.122": "Alter Maze", "t.123": "UniJam 2023", "t.124": "For Glory", "t.125": "Projeto pessoal feito em 2024", "t.126": "Archeollector", "t.127": "GameJam Etiolles 2022", "t.128": "Stellar road", "t.129": "Estágio do 1º ano", "t.130": "Chrono Switch", "t.131": "Global Game Jam 2022", "t.132": "From Scratch", "t.133": "UniJam 2021 e o primeiro jogo que eu fiz",
+                    "t.134": "Contato", "t.135": "Para oportunidades, colaborações ou dúvidas, fique à vontade para entrar em contato.", "t.136": "Enviar e-mail", "t.137": "ourvouai.louan@gmail.com", "t.138": "LinkedIn", "t.139": "louan-ourvouai", "t.140": "Discord", "t.141": "thekitraz", "t.142": "Assunto", "t.143": "Mensagem", "t.144": "Enviar", "t.145": "Design por", "t.146": "BootstrapMade", "t.147": "Distribuído por", "t.148": "ThemeWagon",
+                    "t.149": "Olá Louan,\n\n\nAtenciosamente,",
+                    "t.150": "Desenvolvedor, Engenheiro, Cientista, Viajante, Gamer, Kitraz"
+                }
+            };
+            
+            const langToggle = document.getElementById('langToggle');
+            const langDropdown = document.getElementById('langDropdown');
+            const langOptions = document.querySelectorAll('.lang-option');
+            const currentLangLabel = document.getElementById('currentLangLabel');
+            let currentLang = 'en';
 
-    <!-- Optional ambience backgrounds: add data-ambience-bg="assets/img/ambience/your-image.jpg" to any <section> -->
+            // Store custom Typed instance
+            let myTypedInstance = null;
+            
+            langToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                langDropdown.classList.toggle('show');
+            });
+
+            document.addEventListener('click', () => {
+                langDropdown.classList.remove('show');
+            });
+
+            langOptions.forEach(option => {
+                option.addEventListener('click', (e) => {
+                    const lang = e.target.getAttribute('data-lang');
+                    if (lang !== currentLang) {
+                        setLanguage(lang);
+                    }
+                });
+            });
+
+            function setLanguage(lang) {
+                const data = translations[lang];
+                if (!data) return;
+
+                currentLang = lang;
+                
+                // Update Button Label
+                const label = document.querySelector(`.lang-option[data-lang="${lang}"]`).textContent;
+                currentLangLabel.textContent = label;
+                
+                // Active State in Dropdown
+                langOptions.forEach(opt => {
+                    opt.classList.toggle('active', opt.getAttribute('data-lang') === lang);
+                });
+
+                // Update Text Content
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (data[key]) {
+                        el.textContent = data[key];
+                    }
+                });
+
+                // Update Page Title
+                if (data.__meta && data.__meta.title) {
+                    document.title = data.__meta.title;
+                }
+
+                // Handle Typed.js (The typing effect)
+                const typedEl = document.querySelector('.typed');
+                if (typedEl && data['t.150']) {
+                    const newStrings = data['t.150'];
+                    
+                    // Update the attribute for future reference
+                    typedEl.setAttribute('data-typed-items', newStrings);
+                    
+                    // If the main.js template already created a Typed instance, we often can't reach it.
+                    // However, we can clear the element and create our own instance on top of it.
+                    
+                    // 1. Check if we created one before, if so, destroy it.
+                    if (myTypedInstance) {
+                        myTypedInstance.destroy();
+                    }
+                    
+                    // 2. Clear inner HTML to remove the old cursor/text leftover from the previous run
+                    typedEl.innerHTML = '';
+                    // Also remove the cursor if it was appended as a sibling
+                    const nextSibling = typedEl.nextElementSibling;
+                    if (nextSibling && nextSibling.classList.contains('typed-cursor')) {
+                        nextSibling.remove();
+                    }
+
+                    // 3. Create new Typed instance
+                    // Note: We need Typed available globally. usually typed.umd.js exposes 'Typed'
+                    if (typeof Typed !== 'undefined') {
+                        const stringsArray = newStrings.split(',');
+                        myTypedInstance = new Typed('.typed', {
+                            strings: stringsArray,
+                            loop: true,
+                            typeSpeed: 100,
+                            backSpeed: 50,
+                            backDelay: 2000
+                        });
+                    }
+                }
+            }
+
+            // Init default
+            setLanguage('en');
+
+        })();
+    </script>
+
     <script>
         (function () {
             "use strict";
@@ -1545,126 +1428,78 @@ Best regards,
             function applyAmbience(el) {
                 var url = el.getAttribute("data-ambience-bg");
                 if (!url) return;
-
-                // Apply CSS variable for background image
                 el.style.setProperty("--kitraz-ambience-image", 'url("' + url + '")');
-
-                // Optional: image opacity + overlay strength
                 var imgOpacity = el.getAttribute("data-ambience-opacity");
                 if (imgOpacity) el.style.setProperty("--kitraz-ambience-opacity", imgOpacity);
-
                 var overlay = el.getAttribute("data-ambience-overlay");
                 if (overlay) el.style.setProperty("--kitraz-ambience-overlay", overlay);
-
-                // Optional: force tone
-                var tone = el.getAttribute("data-ambience-tone"); // "dark" | "light"
+                var tone = el.getAttribute("data-ambience-tone");
                 if (tone === "dark") el.classList.add("kitraz-ambience--dark");
                 if (tone === "light") el.classList.add("kitraz-ambience--light");
-
                 el.classList.add("kitraz-ambience");
             }
-
-
 
             function applySiteAmbience() {
                 var main = document.querySelector("main.main");
                 if (!main) return;
-
-                // Set this on <body> or <main>, for example:
-                // <body data-site-bg="assets/img/ambience/forest.jpg">
                 var host = document.querySelector("[data-site-bg]");
                 if (!host) return;
-
                 var url = host.getAttribute("data-site-bg");
                 if (!url) return;
-
-                // Apply CSS variable for background image
                 main.style.setProperty("--kitraz-site-ambience-image", 'url("' + url + '")');
-
-                // Optional tweaks (keep values subtle, e.g. 0.08–0.18)
                 var opacity = host.getAttribute("data-site-bg-opacity");
                 if (opacity) main.style.setProperty("--kitraz-site-ambience-opacity", opacity);
-
                 var overlayOpacity = host.getAttribute("data-site-bg-overlay-opacity");
                 if (overlayOpacity) main.style.setProperty("--kitraz-site-ambience-overlay-opacity", overlayOpacity);
-
-                // Advanced: allow overriding overlay/filter via CSS strings
                 var overlay = host.getAttribute("data-site-bg-overlay");
                 if (overlay) main.style.setProperty("--kitraz-site-ambience-overlay", overlay);
-
                 var filter = host.getAttribute("data-site-bg-filter");
                 if (filter) main.style.setProperty("--kitraz-site-ambience-filter", filter);
-                // Fit / framing:
-                // data-site-bg-fit="contain" to avoid cropping (default is "cover")
-                // data-site-bg-position="top center" (default is "center")
                 var fit = host.getAttribute("data-site-bg-fit");
                 if (fit) {
                     main.style.setProperty("--kitraz-site-ambience-size", fit);
-                    // If using contain, avoid the extra scale that can re-crop edges
                     if (fit.trim().toLowerCase() === "contain") {
                         main.style.setProperty("--kitraz-site-ambience-scale", "1");
                     }
                 }
-
                 var position = host.getAttribute("data-site-bg-position");
                 if (position) main.style.setProperty("--kitraz-site-ambience-position", position);
-
-
-                // If you changed the sidebar width, you can set: data-site-bg-sidebar-w="280px"
                 var sidebarW = host.getAttribute("data-site-bg-sidebar-w");
                 if (sidebarW) document.documentElement.style.setProperty("--kitraz-sidebar-w", sidebarW);
-
                 main.classList.add("kitraz-site-ambience");
             }
-
-
 
             function setupSiteAmbienceParallax() {
                 var host = document.querySelector("[data-site-bg]");
                 var main = document.querySelector("main.main");
                 if (!host || !main || !main.classList.contains("kitraz-site-ambience")) return;
-
-                // Set on <body> (recommended):
-                // data-site-bg-parallax="0.04"   // how much the background moves relative to scroll (0..0.12 typical)
-                // data-site-bg-parallax-max="140" // max shift in px (prevents huge drift on long pages)
                 var factor = parseFloat(host.getAttribute("data-site-bg-parallax") || "0.04");
                 var maxShift = parseFloat(host.getAttribute("data-site-bg-parallax-max") || "140");
-
-
-                // Overscan prevents gaps (black bars) when the parallax transform moves the fixed background.
                 main.style.setProperty("--kitraz-site-ambience-overscan", (Math.max(0, maxShift) + 60) + "px");
-                // Respect reduced motion
                 if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
                     factor = 0;
                 }
                 if (!isFinite(factor) || factor <= 0) return;
-
                 var ticking = false;
-
                 function clamp(v, min, max) { return Math.max(min, Math.min(max, v)); }
-
                 function update() {
                     ticking = false;
                     var y = window.scrollY || window.pageYOffset || 0;
-                    // Negative makes the background drift slightly opposite to scroll (more natural depth).
                     var shift = clamp(-y * factor, -maxShift, maxShift);
                     main.style.setProperty("--kitraz-site-ambience-parallax", shift.toFixed(2) + "px");
                 }
-
                 window.addEventListener("scroll", function () {
                     if (!ticking) {
                         ticking = true;
                         window.requestAnimationFrame(update);
                     }
                 }, { passive: true });
-
                 window.addEventListener("resize", function () {
                     if (!ticking) {
                         ticking = true;
                         window.requestAnimationFrame(update);
                     }
                 });
-
                 update();
             }
 
