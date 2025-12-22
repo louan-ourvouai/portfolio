@@ -633,7 +633,7 @@ main.main.kitraz-site-ambience {
 
             <div class="container" data-aos="fade-up" data-aos-delay="100">
                 <h2 data-i18n="t.010">Ourvouai Louan</h2>
-                <p><span data-i18n="t.011">I'm</span> <span class="typed" data-typed-items="a Developer, an Engineer, a Scientist, a Traveler, a Gamer, Kitraz" data-i18n-typed="t.150"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+                <p><span data-i18n="t.011">I'm</span> <span class="typed-dynamic"></span></p>
             </div>
 
         </section><section id="about" class="about section">
@@ -1377,34 +1377,27 @@ Best regards,
                 }
 
                 // Handle Typed.js (The typing effect)
-                const typedEl = document.querySelector('.typed');
+                // We target '.typed-dynamic' to avoid conflict with main.js
+                const typedEl = document.querySelector('.typed-dynamic');
+
                 if (typedEl && data['t.150']) {
                     const newStrings = data['t.150'];
-                    
-                    // Update the attribute for future reference
-                    typedEl.setAttribute('data-typed-items', newStrings);
-                    
-                    // If the main.js template already created a Typed instance, we often can't reach it.
-                    // However, we can clear the element and create our own instance on top of it.
-                    
-                    // 1. Check if we created one before, if so, destroy it.
+
+                    // 1. Clean up the previous instance if it exists
                     if (myTypedInstance) {
                         myTypedInstance.destroy();
-                    }
-                    
-                    // 2. Clear inner HTML to remove the old cursor/text leftover from the previous run
-                    typedEl.innerHTML = '';
-                    // Also remove the cursor if it was appended as a sibling
-                    const nextSibling = typedEl.nextElementSibling;
-                    if (nextSibling && nextSibling.classList.contains('typed-cursor')) {
-                        nextSibling.remove();
+                        myTypedInstance = null;
                     }
 
-                    // 3. Create new Typed instance
-                    // Note: We need Typed available globally. usually typed.umd.js exposes 'Typed'
+                    // 2. Clear any leftover HTML just to be safe
+                    typedEl.innerHTML = '';
+
+                    // 3. Create the new instance
                     if (typeof Typed !== 'undefined') {
-                        const stringsArray = newStrings.split(',');
-                        myTypedInstance = new Typed('.typed', {
+                        // Split string by commas (ensure your JSON strings are comma-separated)
+                        const stringsArray = newStrings.split(',').map(s => s.trim());
+
+                        myTypedInstance = new Typed('.typed-dynamic', {
                             strings: stringsArray,
                             loop: true,
                             typeSpeed: 100,
