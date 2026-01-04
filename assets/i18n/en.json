@@ -1,7 +1,5 @@
 {
-  "__meta": {
-    "title": "Ourvouai Louan - Portfolio"
-  },
+  "__meta": { "title": "Ourvouai Louan - Portfolio" },
   "t.001": "Ourvouai Louan",
   "t.002": "Home",
   "t.003": "About",
@@ -14,7 +12,7 @@
   "t.010": "Ourvouai Louan",
   "t.011": "I'm",
   "t.012": "About",
-  "t.013": "I’m Louan Ourvouai, a Unity gameplay engineer and ENSIIE (Paris–Évry) graduate, an engineering school specialized in computer science and mathematics, with a Graduate Engineer degree, JIN track (Video Games and Digital Interactions). I’ve built Unity projects across mobile, VR, Windows, and macOS, covering genres such as RTS, FPS/TPS, idle, 2D platformers, and serious games. I previously led the development of a mobile RTS, and I’m currently leading a pet-care mobile game project. Beyond programming, I enjoy contributing across the whole creation pipeline—visuals, sound, narrative, and game design—to help craft cohesive player experiences.",
+  "t.013": "I’m Louan Ourvouai, a Unity gameplay engineer and ENSIIE (Paris–Évry) graduate, an engineering school specialized in computer science and mathematics, with a Graduate Engineer degree, JIN track (Video Games and Digital Interactions). I’ve built Unity projects across mobile, VR, Windows, and macOS, covering genres such as RTS, FPS/TPS, idle, 2D platformers, and serious games. I previously led the development of a mobile RTS, and I’m currently leading a pet-care mobile game project. Beyond programming, I enjoy contributing across the whole creation pipeline: visuals, sound, narrative, and game design to help craft cohesive player experiences.",
   "t.014": "Engineer Gameplay Developer & Unity Developer.",
   "t.015": "I turn ideas into playable prototypes and production-ready gameplay systems in Unity, focusing on game feel, clear communication, and clean architecture.",
   "t.016": "Birthday:",
