@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirecting to Palz...</title>
+    <script>
+        // Get all parameters ONTO sent
+        var params = window.location.search;
+        
+        // Build deep link back to the game
+        // ONTO should append ?id=1&result=0xABC...
+        var deepLink = "palzgame://ontocallback" + params;
+        
+        // If no params from ONTO, try hash fragment
+        if (!params || params === "") {
+            params = window.location.hash;
+            deepLink = "palzgame://ontocallback?" + params.substring(1);
+        }
+        
+        // Redirect to the app
+        window.location.href = deepLink;
+        
+        // Fallback: try again after 500ms
+        setTimeout(function() {
+            window.location.href = deepLink;
+        }, 500);
+    </script>
+</head>
+<body style="font-family: Arial; text-align: center; padding-top: 50px;">
+    <h2>Redirecting to Palz...</h2>
+    <p>If the game doesn't open automatically:</p>
+    <a id="manualLink" href="palzgame://ontocallback">Tap here to open Palz</a>
+    <script>
+        // Update manual link with params too
+        document.getElementById("manualLink").href = "palzgame://ontocallback" + window.location.search;
+    </script>
+</body>
+</html>
