@@ -407,6 +407,41 @@
       box-shadow: 0 14px 40px rgba(184, 138, 59, 0.22);
     }
 
+    /* CV download buttons */
+    .cv-download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: 999px;
+      border: 1.5px solid var(--accent);
+      background: rgba(184, 138, 59, 0.10);
+      color: var(--accent);
+      font-family: "Raleway", sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+    }
+
+    .cv-download-btn:hover {
+      background: rgba(184, 138, 59, 0.24);
+      box-shadow: 0 8px 28px rgba(184, 138, 59, 0.22);
+      transform: translateY(-2px);
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .cv-lang-tag {
+      background: var(--accent);
+      color: #fff;
+      border-radius: 999px;
+      padding: 1px 8px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
     /* Reduced motion */
     @media (prefers-reduced-motion: reduce) {
       * {
@@ -864,7 +899,26 @@ main.main.kitraz-site-ambience {
                 <p data-i18n="t.056">
                     A snapshot of my CV highlighting my experience, education, and key projects as a Unity gameplay engineer.
                 </p>
-            </div><div class="container">
+            </div>
+
+            <div class="container text-center mb-4" data-aos="fade-up" data-aos-delay="50">
+                <a href="CV/CV_2026-02-18_EN_Louan_Ourvouai.pdf"
+                   download
+                   class="cv-download-btn me-3">
+                    <i class="bi bi-file-earmark-arrow-down"></i>
+                    <span data-i18n="t.151">Download CV</span>
+                    <span class="cv-lang-tag">EN</span>
+                </a>
+                <a href="CV/CV_2026-02-18_FR_Louan_Ourvouai.pdf"
+                   download
+                   class="cv-download-btn">
+                    <i class="bi bi-file-earmark-arrow-down"></i>
+                    <span data-i18n="t.151">Download CV</span>
+                    <span class="cv-lang-tag">FR</span>
+                </a>
+            </div>
+
+            <div class="container">
 
                 <div class="row">
 
