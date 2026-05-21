@@ -1,4 +1,4 @@
-{
+﻿{
   "__meta": { "title": "Ourvouai Louan - Portfolio" },
   "t.001": "Ourvouai Louan",
   "t.002": "Home",
@@ -57,13 +57,13 @@
   "t.055": "Resume",
   "t.056": "A snapshot of my CV highlighting my experience, education, and key projects as a Unity gameplay engineer.",
   "t.057": "Professional Experiences",
-  "t.058": "Engineer — Lead Gameplay Developer",
+  "t.058": "Engineer Lead Gameplay Developer",
   "t.059": "Since December 2025",
   "t.060": "ELEVATE CORE LLC, Remote",
   "t.061": "Developing the prototype of a mobile pet-care game in Unity, from core gameplay systems to a playable loop.",
   "t.062": "Designing the game’s gameplay, progression, and overall game design.",
   "t.063": "Implementing and maintaining wallet communication.",
-  "t.064": "Engineer — Lead Gameplay Developer | Associate",
+  "t.064": "Engineer Lead Gameplay Developer | Associate",
   "t.065": "From August 2024 to February 2026",
   "t.066": "Constellation Games, Remote",
   "t.067": "Development of a mobile RTS, first project of the Constellation Games studio.",
@@ -108,7 +108,7 @@
   "t.106": "GameJam Etiolles 2022: Archéollector",
   "t.107": "Global Game Jam 2022: Chrono Switch",
   "t.108": "UniJam 2021: From Scratch",
-  "t.109": "Project — “Insect Identification via Machine Learning”",
+  "t.109": "Project “Insect Identification via Machine Learning”",
   "t.110": "From September 2020 to June 2021",
   "t.111": "TIPE individual La Rochelle",
   "t.112": "Introductory machine-learning project using the k-nearest neighbors method.",
@@ -151,8 +151,8 @@
   "t.149": "Hello Louan, Best regards,",
   "t.150": "a Developer, an Engineer, a Scientist, a Traveler, a Gamer, Kitraz",
   "t.151": "Download CV",
-  "t.152": "Norwegian \"A1 — Learning\"",
+  "t.152": "Norwegian \"A1 Learning\"",
   "t.153": "20%",
   "t.154": "Palz",
-  "t.155": "Lead Gameplay Engineer — Mobile pet care & arcade game with crypto wallet"
+  "t.155": "Lead Gameplay Engineer Mobile pet care & arcade game with crypto wallet"
 }
