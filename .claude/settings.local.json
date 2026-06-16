@@ -6,7 +6,18 @@
       "Bash(pip install *)",
       "Bash(python -c ' *)",
       "Bash(python CV/patch_cvs.py)",
-      "Bash(python CV/generated/patch_cvs.py)"
+      "Bash(python CV/generated/patch_cvs.py)",
+      "Bash(Select-String -Pattern \"claude\")",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\Ourvouai Louan\\\\Documents\\\\Dev\\\\GitHub\\\\portfolio\" -Recurse -File)",
+      "Bash(Select-Object FullName)",
+      "Bash(Sort-Object FullName)",
+      "Bash(Get-ChildItem \"C:\\\\Users\\\\Ourvouai Louan\\\\Documents\\\\Dev\\\\GitHub\\\\portfolio\\\\CV\" -File)",
+      "Bash(Select-Object Name, FullName)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "WebFetch(domain:www.palzgame.com)",
+      "PowerShell(Copy-Item *)",
+      "Bash(grep -n 'section-title h2::before\\\\|section-title h2::after\\\\|section-title h2 {\\\\|section-title h2$' index.html)"
     ]
   }
 }
