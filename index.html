@@ -145,46 +145,28 @@
         0 8px 22px -10px rgba(7, 20, 14, 0.5);
     }
 
-    /* --- Skills & Languages: richer progress bars --- */
+    /* --- Skills & Languages: qualitative labels (no progress bars) --- */
+    .skills .progress {
+      height: auto;
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(125, 176, 143, 0.18);
+    }
+    .skills .progress:last-child { border-bottom: none; }
+    .skills .progress .skill {
+      margin: 0;
+      line-height: 1.9;
+    }
     .skills .progress .skill .val {
+      float: right;
       font-size: 12px;
       font-weight: 600;
+      text-transform: none;
+      letter-spacing: 0.2px;
       color: var(--accent);
       background: var(--accent-soft);
       border: 1px solid rgba(184, 138, 59, 0.35);
       border-radius: 999px;
-      padding: 1px 9px;
-    }
-    .skills .progress-bar-wrap {
-      height: 12px;
-      border-radius: 999px;
-      background: rgba(7, 20, 14, 0.10);
-      box-shadow: inset 0 1px 2px rgba(7, 20, 14, 0.18);
-      overflow: hidden;
-    }
-    .skills .progress-bar {
-      height: 12px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, var(--sage), var(--accent));
-      box-shadow: 0 0 10px rgba(184, 138, 59, 0.45);
-      position: relative;
-      overflow: hidden;
-    }
-    /* light sheen sweeping across each filled bar */
-    .skills .progress-bar::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
-      transform: translateX(-100%);
-      animation: skillSheen 2.8s ease-in-out infinite;
-    }
-    @keyframes skillSheen {
-      0% { transform: translateX(-100%); }
-      55%, 100% { transform: translateX(220%); }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .skills .progress-bar::after { animation: none; }
+      padding: 2px 11px;
     }
 
     /* --- [IDEA: section-title flourish] mirror ornament + gentle twinkle --- */
@@ -890,7 +872,7 @@ main.main.kitraz-site-ambience {
 
         <div class="social-links text-center">
             <a href="https://www.linkedin.com/in/louan-ourvouai-96bb15218/" class="linkedin" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
-            <a href="https://github.com/Megakitraz" class="github" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+            <a href="https://github.com/louan-ourvouai" class="github" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
             <a href="https://itch.io/profile/kitraz" class="itchio" target="_blank" rel="noopener noreferrer"><i class="bi bi-controller"></i></a>
         </div>
 
@@ -983,50 +965,26 @@ Remote work matters to me because it supports a healthier pace, long-term sustai
                     <div class="col-lg-6">
 
                         <div class="progress">
-                            <span class="skill"><span data-i18n="t.031">Unity</span> <i class="val" data-i18n="t.032">100%</i></span>
-                            <div class="progress-bar-wrap">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
+                            <span class="skill"><span data-i18n="t.031">Unity</span> <i class="val" data-i18n="t.032">Expert</i></span>
                         </div><div class="progress">
-                            <span class="skill"><span data-i18n="t.033">Git</span> <i class="val" data-i18n="t.034">100%</i></span>
-                            <div class="progress-bar-wrap">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
+                            <span class="skill"><span data-i18n="t.033">Git</span> <i class="val" data-i18n="t.034">Proficient</i></span>
                         </div><div class="progress">
-                            <span class="skill"><span data-i18n="t.035">Arduino</span> <i class="val" data-i18n="t.036">80%</i></span>
-                            <div class="progress-bar-wrap">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
+                            <span class="skill"><span data-i18n="t.035">Arduino</span> <i class="val" data-i18n="t.036">Familiar</i></span>
                         </div><div class="progress">
-                            <span class="skill"><span data-i18n="t.037">Blender</span> <i class="val" data-i18n="t.038">50%</i></span>
-                            <div class="progress-bar-wrap">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
+                            <span class="skill"><span data-i18n="t.037">Blender</span> <i class="val" data-i18n="t.038">Learning</i></span>
                         </div>
                     </div>
 
                     <div class="col-lg-6">
 
                         <div class="progress">
-                            <span class="skill"><span data-i18n="t.039">C#</span> <i class="val" data-i18n="t.040">100%</i></span>
-                            <div class="progress-bar-wrap">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
+                            <span class="skill"><span data-i18n="t.039">C#</span> <i class="val" data-i18n="t.040">Expert</i></span>
                         </div><div class="progress">
-                            <span class="skill"><span data-i18n="t.041">C++</span> <i class="val" data-i18n="t.042">100%</i></span>
-                            <div class="progress-bar-wrap">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
+                            <span class="skill"><span data-i18n="t.041">C++</span> <i class="val" data-i18n="t.042">Proficient</i></span>
                         </div><div class="progress">
-                            <span class="skill"><span data-i18n="t.043">Java</span> <i class="val" data-i18n="t.044">95%</i></span>
-                            <div class="progress-bar-wrap">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
+                            <span class="skill"><span data-i18n="t.043">Java</span> <i class="val" data-i18n="t.044">Proficient</i></span>
                         </div><div class="progress">
-                            <span class="skill"><span data-i18n="t.045">React</span> <i class="val" data-i18n="t.046">80%</i></span>
-                            <div class="progress-bar-wrap">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
+                            <span class="skill"><span data-i18n="t.045">React</span> <i class="val" data-i18n="t.046">Familiar</i></span>
                         </div>
                     </div>
 
@@ -1049,30 +1007,18 @@ Remote work matters to me because it supports a healthier pace, long-term sustai
                     <div class="col-lg-6">
 
                         <div class="progress">
-                            <span class="skill"><span data-i18n="t.049">French "Native"</span> <i class="val" data-i18n="t.050">100%</i></span>
-                            <div class="progress-bar-wrap">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
+                            <span class="skill"><span data-i18n="t.049">French</span> <i class="val" data-i18n="t.050">Native</i></span>
                         </div><div class="progress">
-                            <span class="skill"><span data-i18n="t.051">Portuguese "B1"</span> <i class="val" data-i18n="t.052">70%</i></span>
-                            <div class="progress-bar-wrap">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
+                            <span class="skill"><span data-i18n="t.051">Portuguese</span> <i class="val" data-i18n="t.052">B1 - Intermediate</i></span>
                         </div>
                     </div>
 
                     <div class="col-lg-6">
 
                         <div class="progress">
-                            <span class="skill"><span data-i18n="t.053">English "C1 Certified"</span> <i class="val" data-i18n="t.054">90%</i></span>
-                            <div class="progress-bar-wrap">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
+                            <span class="skill"><span data-i18n="t.053">English</span> <i class="val" data-i18n="t.054">C1 - Advanced (certified)</i></span>
                         </div><div class="progress">
-                            <span class="skill"><span data-i18n="t.152">Norwegian "A1 Learning"</span> <i class="val" data-i18n="t.153">20%</i></span>
-                            <div class="progress-bar-wrap">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
+                            <span class="skill"><span data-i18n="t.152">Norwegian</span> <i class="val" data-i18n="t.153">A1 - Beginner (learning)</i></span>
                         </div>
                     </div>
 
@@ -1589,29 +1535,29 @@ Best regards,
                     "t.029": "Skills",
                     "t.030": "Built through professional experiences, formations, game jams, association projects, and personal game projects.",
                     "t.031": "Unity",
-                    "t.032": "100%",
+                    "t.032": "Expert",
                     "t.033": "Git",
-                    "t.034": "100%",
+                    "t.034": "Proficient",
                     "t.035": "Arduino",
-                    "t.036": "80%",
+                    "t.036": "Familiar",
                     "t.037": "Blender",
-                    "t.038": "50%",
+                    "t.038": "Learning",
                     "t.039": "C#",
-                    "t.040": "100%",
+                    "t.040": "Expert",
                     "t.041": "C++",
-                    "t.042": "100%",
+                    "t.042": "Proficient",
                     "t.043": "Java",
-                    "t.044": "95%",
+                    "t.044": "Proficient",
                     "t.045": "React",
-                    "t.046": "80%",
+                    "t.046": "Familiar",
                     "t.047": "Languages",
                     "t.048": "Built through travels and formations",
-                    "t.049": "French \"Native\"",
-                    "t.050": "100%",
-                    "t.051": "Portuguese \"B1\"",
-                    "t.052": "70%",
-                    "t.053": "English \"C1 Certified\"",
-                    "t.054": "90%",
+                    "t.049": "French",
+                    "t.050": "Native",
+                    "t.051": "Portuguese",
+                    "t.052": "B1 - Intermediate",
+                    "t.053": "English",
+                    "t.054": "C1 - Advanced (certified)",
                     "t.055": "Resume",
                     "t.056": "A snapshot of my CV highlighting my experience, education, and key projects as a Unity gameplay engineer.",
                     "t.057": "Professional Experiences",
@@ -1709,8 +1655,8 @@ Best regards,
                     "t.149": "Hello Louan, Best regards,",
                     "t.150": "a Developer, an Engineer, a Scientist, a Traveler, a Gamer, Kitraz",
                     "t.151": "Download CV",
-                    "t.152": "Norwegian \"A1 Learning\"",
-                    "t.153": "20%",
+                    "t.152": "Norwegian",
+                    "t.153": "A1 - Beginner (learning)",
                     "t.154": "Palz",
                     "t.155": "Lead Gameplay Engineer Mobile pet care & arcade game with crypto wallet"
                 },
@@ -1749,29 +1695,29 @@ Best regards,
                     "t.029": "Compétences",
                     "t.030": "Construit grâce à mes expériences professionnelles, formations, game jams, projets associatifs et projets personnels.",
                     "t.031": "Unity",
-                    "t.032": "100%",
+                    "t.032": "Expert",
                     "t.033": "Git",
-                    "t.034": "100%",
+                    "t.034": "Avancé",
                     "t.035": "Arduino",
-                    "t.036": "80%",
+                    "t.036": "Familier",
                     "t.037": "Blender",
-                    "t.038": "50%",
+                    "t.038": "En apprentissage",
                     "t.039": "C#",
-                    "t.040": "100%",
+                    "t.040": "Expert",
                     "t.041": "C++",
-                    "t.042": "100%",
+                    "t.042": "Avancé",
                     "t.043": "Java",
-                    "t.044": "95%",
+                    "t.044": "Avancé",
                     "t.045": "React",
-                    "t.046": "80%",
+                    "t.046": "Familier",
                     "t.047": "Langues",
                     "t.048": "Forgé par mes voyages et mes formations",
-                    "t.049": "Français \"natif\"",
-                    "t.050": "100%",
-                    "t.051": "Portugais \"B1\"",
-                    "t.052": "70%",
-                    "t.053": "Anglais \"C1 certifié\"",
-                    "t.054": "90%",
+                    "t.049": "Français",
+                    "t.050": "Natif",
+                    "t.051": "Portugais",
+                    "t.052": "B1 - Intermédiaire",
+                    "t.053": "Anglais",
+                    "t.054": "C1 - Avancé (certifié)",
                     "t.055": "CV",
                     "t.056": "Un aperçu de mon CV mettant en avant mes expériences, mes formations et mes projets clés en tant qu’ingénieur gameplay sur Unity.",
                     "t.057": "Expériences professionnelles",
@@ -1869,8 +1815,8 @@ Best regards,
                     "t.149": "Bonjour Louan,\n\n\nBien cordialement,",
                     "t.150": "un Développeur, un Ingénieur, un Scientifique, un Voyageur, un Gamer, Kitraz",
                     "t.151": "Télécharger le CV",
-                    "t.152": "Norvégien \"A1 En apprentissage\"",
-                    "t.153": "20%",
+                    "t.152": "Norvégien",
+                    "t.153": "A1 - Débutant (en apprentissage)",
                     "t.154": "Palz",
                     "t.155": "Lead Gameplay Engineer Jeu mobile pet care & arcade avec wallet crypto"
                 },
@@ -1907,29 +1853,29 @@ Best regards,
                     "t.029": "Habilidades",
                     "t.030": "Construído por experiências profissionais, formações, game jams, projetos associativos e projetos pessoais.",
                     "t.031": "Unity",
-                    "t.032": "100%",
+                    "t.032": "Especialista",
                     "t.033": "Git",
-                    "t.034": "100%",
+                    "t.034": "Avançado",
                     "t.035": "Arduino",
-                    "t.036": "80%",
+                    "t.036": "Familiarizado",
                     "t.037": "Blender",
-                    "t.038": "50%",
+                    "t.038": "Aprendendo",
                     "t.039": "C#",
-                    "t.040": "100%",
+                    "t.040": "Especialista",
                     "t.041": "C++",
-                    "t.042": "100%",
+                    "t.042": "Avançado",
                     "t.043": "Java",
-                    "t.044": "95%",
+                    "t.044": "Avançado",
                     "t.045": "React",
-                    "t.046": "80%",
+                    "t.046": "Familiarizado",
                     "t.047": "Idiomas",
                     "t.048": "Construído por viagens e formações",
-                    "t.049": "Francês \"nativo\"",
-                    "t.050": "100%",
-                    "t.051": "Português \"B1\"",
-                    "t.052": "70%",
-                    "t.053": "Inglês \"C1 (certificado)\"",
-                    "t.054": "90%",
+                    "t.049": "Francês",
+                    "t.050": "Nativo",
+                    "t.051": "Português",
+                    "t.052": "B1 - Intermediário",
+                    "t.053": "Inglês",
+                    "t.054": "C1 - Avançado (certificado)",
                     "t.055": "Currículo",
                     "t.056": "Uma visão geral do meu CV destacando minha experiência, formação e principais projetos como engenheiro de gameplay Unity.",
                     "t.057": "Experiência profissional",
@@ -2027,8 +1973,8 @@ Best regards,
                     "t.149": "Olá Louan,\n\n\nAtenciosamente,",
                     "t.150": "Desenvolvedor, Engenheiro, Cientista, Viajante, Gamer, Kitraz",
                     "t.151": "Baixar CV",
-                    "t.152": "Norueguês \"A1 Aprendendo\"",
-                    "t.153": "20%",
+                    "t.152": "Norueguês",
+                    "t.153": "A1 - Iniciante (aprendendo)",
                     "t.154": "Palz",
                     "t.155": "Lead Gameplay Engineer Jogo mobile de pets e arcade com carteira cripto"
                 },
@@ -2065,29 +2011,29 @@ Best regards,
                     "t.029": "Ferdigheter",
                     "t.030": "Bygget gjennom profesjonelle erfaringer, kurs, game jams, foreningsprosjekter og personlige spillprosjekter.",
                     "t.031": "Unity",
-                    "t.032": "100%",
+                    "t.032": "Ekspert",
                     "t.033": "Git",
-                    "t.034": "100%",
+                    "t.034": "Avansert",
                     "t.035": "Arduino",
-                    "t.036": "80%",
+                    "t.036": "Kjent",
                     "t.037": "Blender",
-                    "t.038": "50%",
+                    "t.038": "Lærer",
                     "t.039": "C#",
-                    "t.040": "100%",
+                    "t.040": "Ekspert",
                     "t.041": "C++",
-                    "t.042": "100%",
+                    "t.042": "Avansert",
                     "t.043": "Java",
-                    "t.044": "95%",
+                    "t.044": "Avansert",
                     "t.045": "React",
-                    "t.046": "80%",
+                    "t.046": "Kjent",
                     "t.047": "Sprak",
                     "t.048": "Bygget gjennom reiser og utdanning",
-                    "t.049": "Fransk \"Morsmål\"",
-                    "t.050": "100%",
-                    "t.051": "Portugisisk \"B1\"",
-                    "t.052": "70%",
-                    "t.053": "Engelsk \"C1 Sertifisert\"",
-                    "t.054": "90%",
+                    "t.049": "Fransk",
+                    "t.050": "Morsmål",
+                    "t.051": "Portugisisk",
+                    "t.052": "B1 - Middels",
+                    "t.053": "Engelsk",
+                    "t.054": "C1 - Avansert (sertifisert)",
                     "t.055": "CV",
                     "t.056": "En oversikt over min CV som fremhever min erfaring, utdanning og nøkkelprosjekter som Unity gameplay-ingeniør.",
                     "t.057": "Profesjonell erfaring",
@@ -2185,8 +2131,8 @@ Best regards,
                     "t.149": "Hei Louan,\n\n\nMed vennlig hilsen,",
                     "t.150": "en Utvikler, en Ingeniør, en Vitenskapsmann, en Reisende, en Gamer, Kitraz",
                     "t.151": "Last ned CV",
-                    "t.152": "Norsk \"A1 Larer\"",
-                    "t.153": "20%",
+                    "t.152": "Norsk",
+                    "t.153": "A1 - Nybegynner (lærer)",
                     "t.154": "Palz",
                     "t.155": "Lead Gameplay Engineer Mobilt dyrepleie- og arkadespill med kryptolommebok"
                 }

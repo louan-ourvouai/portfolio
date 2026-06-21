@@ -32,7 +32,7 @@ timeline, languages, etc.)
 
 ### Links
 - Portfolio: https://louan-ourvouai.github.io/portfolio/
-- GitHub: https://github.com/Megakitraz
+- GitHub: https://github.com/louan-ourvouai
 - LinkedIn: https://www.linkedin.com/in/louan-ourvouai-96bb15218/
 - itch.io: https://itch.io/profile/kitraz
 
