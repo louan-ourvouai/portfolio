@@ -108,6 +108,93 @@
     }
 
     /* ==========================================================
+       RECOMMENDATIONS
+       ========================================================== */
+    .recommendations .reco-letter {
+      position: relative;
+      background: var(--parchment);
+      color: var(--ink);
+      border-radius: 14px;
+      padding: 2.4rem 2.2rem 1.9rem;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(184, 138, 59, 0.28);
+      border-left: 4px solid var(--accent);
+      max-width: 880px;
+      margin: 0 auto;
+    }
+    .recommendations .reco-quote-icon {
+      color: var(--accent);
+      font-size: 2.2rem;
+      line-height: 1;
+      opacity: 0.55;
+    }
+    .recommendations .reco-body {
+      white-space: pre-line;
+      margin: 0.6rem 0 1.4rem;
+      line-height: 1.7;
+      color: #2a312b;
+      font-size: 1.02rem;
+    }
+    .recommendations .reco-meta {
+      border-top: 1px solid rgba(184, 138, 59, 0.3);
+      padding-top: 1.1rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.3rem 0.8rem;
+    }
+    .recommendations .reco-author {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin: 0;
+    }
+    .recommendations .reco-role {
+      color: #5c6660;
+      font-size: 0.95rem;
+    }
+    .recommendations .reco-company {
+      width: 100%;
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+    }
+    .recommendations .reco-downloads {
+      margin-top: 1.4rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .recommendations .reco-dl-label {
+      color: #5c6660;
+      font-size: 0.92rem;
+      margin-right: 0.2rem;
+    }
+    .recommendations .reco-dl-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      color: #6b4f1d;
+      background: rgba(184, 138, 59, 0.10);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+    .recommendations .reco-dl-btn:hover {
+      background: var(--accent);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    /* ==========================================================
        VISUAL ENHANCEMENTS (proposals)
        ========================================================== */
 
@@ -882,6 +969,7 @@ main.main.kitraz-site-ambience {
                 <li><a href="#about"><i class="bi bi-person navicon"></i> <span data-i18n="t.003">About</span></a></li>
                 <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> <span data-i18n="t.004">Resume</span></a></li>
                 <li><a href="#portfolio"><i class="bi bi-images navicon"></i> <span data-i18n="t.005">Projects</span></a></li>
+                <li><a href="#recommendations"><i class="bi bi-award navicon"></i> <span data-i18n="t.163">Recommendations</span></a></li>
                 <li><a href="#contact"><i class="bi bi-envelope navicon"></i> <span data-i18n="t.006">Contact</span></a></li>
             </ul>
         </nav>
@@ -1395,6 +1483,45 @@ Remote work matters to me because it supports a healthier pace, long-term sustai
 
             </div>
 
+        </section><section id="recommendations" class="recommendations section">
+
+            <div class="container section-title" data-aos="fade-up">
+                <h2 data-i18n="t.163">Recommendations</h2>
+            </div>
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="reco-letter">
+                    <i class="bi bi-quote reco-quote-icon"></i>
+                    <p class="reco-body" data-i18n="t.168">To whom it may concern,
+
+It is my pleasure to wholeheartedly recommend Louan Ourvouai, with whom I had the opportunity to collaborate on the development of PALZ, an application built with Unity.
+
+Louan demonstrated excellent technical skills throughout the project, particularly in the design and development of mini-games. His command of the Unity environment allowed him to deliver polished, engaging game experiences that integrated seamlessly into the overall application. He has a natural ability to turn ideas into functional and creative game mechanics efficiently.
+
+One of his contributions that stood out most to our team was his ability to conduct in-depth research and technical benchmarks, which he consistently translated into clear, well-structured presentations. This skill for synthesizing complex information into accessible and actionable insights proved invaluable to the team, and directly shaped several key decisions throughout the project.
+
+Beyond his technical abilities, Louan stands out for his great attitude within the team. His consistently upbeat demeanor helped maintain a positive working atmosphere, even during the most demanding phases of the project. His outstanding punctuality and strong sense of responsibility also made the collaboration remarkably smooth and reliable.
+
+I recommend Louan without hesitation for any project requiring a motivated, thorough, and enjoyable Unity developer to work with. He would be a true asset to any team.
+
+Please feel free to reach out if you need any further information.
+
+Best regards,</p>
+                    <div class="reco-meta">
+                        <p class="reco-author" data-i18n="t.165">Marin Enault</p>
+                        <span class="reco-role" data-i18n="t.166">Full-Stack Developer</span>
+                        <span class="reco-company" data-i18n="t.167">Palz · Elevate Core LLC</span>
+                    </div>
+                    <div class="reco-downloads">
+                        <span class="reco-dl-label" data-i18n="t.169">Download the letter:</span>
+                        <a class="reco-dl-btn" href="assets/recommendations/Letter_of_Recommendation_EN_Marin.pdf" download><i class="bi bi-filetype-pdf"></i> English</a>
+                        <a class="reco-dl-btn" href="assets/recommendations/Lettre_de_Recommandation_FR_Marin.pdf" download><i class="bi bi-filetype-pdf"></i> Français</a>
+                    </div>
+                </div>
+
+            </div>
+
         </section><section id="contact" class="contact section">
 
             <div class="container section-title" data-aos="fade-up">
@@ -1692,7 +1819,13 @@ Best regards,
                     "t.159": "2026",
                     "t.160": "Personal open-source project",
                     "t.161": "Full-stack algorithmic crypto trading bot for Binance (Python): multi-timeframe 6-factor momentum strategy with a two-layer ATR-based risk system.",
-                    "t.162": "Real-time Flask + SocketIO dashboard streaming live decisions and P&L, with paper/live trading and one-click VPS deployment."
+                    "t.162": "Real-time Flask + SocketIO dashboard streaming live decisions and P&L, with paper/live trading and one-click VPS deployment.",
+                    "t.163": "Recommendations",
+                    "t.165": "Marin Enault",
+                    "t.166": "Full-Stack Developer",
+                    "t.167": "Palz · Elevate Core LLC",
+                    "t.168": "To whom it may concern,\n\nIt is my pleasure to wholeheartedly recommend Louan Ourvouai, with whom I had the opportunity to collaborate on the development of PALZ, an application built with Unity.\n\nLouan demonstrated excellent technical skills throughout the project, particularly in the design and development of mini-games. His command of the Unity environment allowed him to deliver polished, engaging game experiences that integrated seamlessly into the overall application. He has a natural ability to turn ideas into functional and creative game mechanics efficiently.\n\nOne of his contributions that stood out most to our team was his ability to conduct in-depth research and technical benchmarks, which he consistently translated into clear, well-structured presentations. This skill for synthesizing complex information into accessible and actionable insights proved invaluable to the team, and directly shaped several key decisions throughout the project.\n\nBeyond his technical abilities, Louan stands out for his great attitude within the team. His consistently upbeat demeanor helped maintain a positive working atmosphere, even during the most demanding phases of the project. His outstanding punctuality and strong sense of responsibility also made the collaboration remarkably smooth and reliable.\n\nI recommend Louan without hesitation for any project requiring a motivated, thorough, and enjoyable Unity developer to work with. He would be a true asset to any team.\n\nPlease feel free to reach out if you need any further information.\n\nBest regards,",
+                    "t.169": "Download the letter:"
                 },
                 "fr": {
                     "__meta": {
@@ -1859,7 +1992,13 @@ Best regards,
                     "t.159": "2026",
                     "t.160": "Projet personnel open source",
                     "t.161": "Bot de trading crypto algorithmique full-stack pour Binance (Python) : stratégie momentum à 6 facteurs multi-timeframes avec un système de gestion du risque à deux niveaux basé sur l’ATR.",
-                    "t.162": "Dashboard temps réel Flask + SocketIO diffusant les décisions et le P&L en direct, avec trading papier/réel et déploiement VPS en un clic."
+                    "t.162": "Dashboard temps réel Flask + SocketIO diffusant les décisions et le P&L en direct, avec trading papier/réel et déploiement VPS en un clic.",
+                    "t.163": "Recommandations",
+                    "t.165": "Marin Enault",
+                    "t.166": "Développeur Full-Stack",
+                    "t.167": "Palz · Elevate Core LLC",
+                    "t.168": "À qui de droit,\n\nJ’ai le plaisir de recommander chaleureusement Louan Ourvouai, avec qui j’ai eu l’occasion de collaborer dans le cadre du développement de PALZ, une application réalisée sous Unity.\n\nLouan a fait preuve d’excellentes compétences techniques tout au long du projet, en particulier dans la conception et le développement de mini-jeux. Sa maîtrise de l’environnement Unity lui a permis de livrer des expériences de jeu soignées, ludiques et bien intégrées à l’application globale. Il sait transformer des idées en mécaniques de jeu fonctionnelles avec efficacité et créativité.\n\nL’une de ses contributions qui nous a particulièrement marqués est sa capacité à mener des recherches approfondies et des benchmarks techniques, qu’il a systématiquement su restituer sous forme de présentations claires et structurées. Cette aptitude à synthétiser des informations complexes pour les rendre accessibles et actionnables a été d’une grande valeur pour l’équipe, et a directement influencé plusieurs décisions clés du projet.\n\nAu-delà de ses qualités techniques, Louan se distingue par son excellente attitude au sein de l’équipe. Sa bonne humeur constante a contribué à maintenir une ambiance de travail positive, même dans les phases les plus intenses du projet. Sa ponctualité exemplaire et son sens des responsabilités ont également rendu la collaboration particulièrement fluide et fiable.\n\nJe recommande Louan sans réserve pour tout projet nécessitant un développeur Unity motivé, rigoureux et agréable à travailler. Il sera un atout précieux pour n’importe quelle équipe.\n\nN’hésitez pas à me contacter pour tout renseignement complémentaire.\n\nCordialement,",
+                    "t.169": "Télécharger la lettre :"
                 },
                 "pt-br": {
                     "__meta": { "title": "Ourvouai Louan - Portfólio" },
@@ -2024,7 +2163,13 @@ Best regards,
                     "t.159": "2026",
                     "t.160": "Projeto pessoal open source",
                     "t.161": "Bot de trading cripto algorítmico full-stack para Binance (Python): estratégia de momentum de 6 fatores multi-timeframe com um sistema de risco de duas camadas baseado em ATR.",
-                    "t.162": "Painel em tempo real Flask + SocketIO transmitindo decisões e P&L ao vivo, com trading paper/real e deploy em VPS com um clique."
+                    "t.162": "Painel em tempo real Flask + SocketIO transmitindo decisões e P&L ao vivo, com trading paper/real e deploy em VPS com um clique.",
+                    "t.163": "Recomendações",
+                    "t.165": "Marin Enault",
+                    "t.166": "Desenvolvedor Full-Stack",
+                    "t.167": "Palz · Elevate Core LLC",
+                    "t.168": "A quem possa interessar,\n\nÉ um prazer recomendar de todo o coração Louan Ourvouai, com quem tive a oportunidade de colaborar no desenvolvimento do PALZ, uma aplicação feita em Unity.\n\nLouan demonstrou excelentes competências técnicas ao longo de todo o projeto, especialmente no design e no desenvolvimento de minijogos. Seu domínio do ambiente Unity permitiu que ele entregasse experiências de jogo refinadas e envolventes, integradas de forma fluida à aplicação como um todo. Ele tem uma habilidade natural para transformar ideias em mecânicas de jogo funcionais e criativas com eficiência.\n\nUma das contribuições que mais se destacou para a nossa equipe foi sua capacidade de conduzir pesquisas aprofundadas e benchmarks técnicos, que ele sempre transformava em apresentações claras e bem estruturadas. Essa habilidade de sintetizar informações complexas em insights acessíveis e acionáveis foi muito valiosa para a equipe e influenciou diretamente várias decisões importantes do projeto.\n\nAlém de suas habilidades técnicas, Louan se destaca por sua excelente atitude dentro da equipe. Seu bom humor constante ajudou a manter um ambiente de trabalho positivo, mesmo nas fases mais intensas do projeto. Sua pontualidade exemplar e seu forte senso de responsabilidade também tornaram a colaboração notavelmente fluida e confiável.\n\nRecomendo Louan sem hesitação para qualquer projeto que exija um desenvolvedor Unity motivado, rigoroso e agradável de se trabalhar. Ele será um verdadeiro trunfo para qualquer equipe.\n\nFique à vontade para entrar em contato caso precise de mais informações.\n\nAtenciosamente,",
+                    "t.169": "Baixar a carta:"
                 },
                 "nb": {
                     "__meta": { "title": "Ourvouai Louan - Portefølje" },
@@ -2189,7 +2334,13 @@ Best regards,
                     "t.159": "2026",
                     "t.160": "Personlig åpen kildekode-prosjekt",
                     "t.161": "Full-stack algoritmisk krypto-tradingbot for Binance (Python): multi-timeframe 6-faktors momentum-strategi med et to-lags ATR-basert risikosystem.",
-                    "t.162": "Sanntids Flask + SocketIO-dashbord som strømmer beslutninger og P&L live, med papir-/live-handel og VPS-distribusjon med ett klikk."
+                    "t.162": "Sanntids Flask + SocketIO-dashbord som strømmer beslutninger og P&L live, med papir-/live-handel og VPS-distribusjon med ett klikk.",
+                    "t.163": "Anbefalinger",
+                    "t.165": "Marin Enault",
+                    "t.166": "Full-Stack-utvikler",
+                    "t.167": "Palz · Elevate Core LLC",
+                    "t.168": "Til den det måtte angå,\n\nDet er en glede for meg å gi min varmeste anbefaling av Louan Ourvouai, som jeg hadde muligheten til å samarbeide med på utviklingen av PALZ, en applikasjon bygget med Unity.\n\nLouan viste utmerkede tekniske ferdigheter gjennom hele prosjektet, særlig i design og utvikling av minispill. Hans behersking av Unity-miljøet gjorde det mulig for ham å levere forseggjorte og engasjerende spillopplevelser som ble sømløst integrert i applikasjonen som helhet. Han har en naturlig evne til å gjøre ideer om til funksjonelle og kreative spillmekanikker på en effektiv måte.\n\nEt av bidragene som utmerket seg mest for teamet vårt, var hans evne til å gjennomføre grundig research og tekniske benchmarks, som han konsekvent omsatte til klare og velstrukturerte presentasjoner. Denne evnen til å sammenfatte kompleks informasjon til tilgjengelig og handlingsrettet innsikt var uvurderlig for teamet, og formet direkte flere viktige beslutninger gjennom prosjektet.\n\nUtover de tekniske ferdighetene utmerker Louan seg med sin gode holdning i teamet. Hans konsekvent positive humør bidro til å opprettholde en god arbeidsatmosfære, selv i de mest krevende fasene av prosjektet. Hans enestående punktlighet og sterke ansvarsfølelse gjorde også samarbeidet bemerkelsesverdig smidig og pålitelig.\n\nJeg anbefaler Louan uten forbehold for ethvert prosjekt som krever en motivert, grundig og hyggelig Unity-utvikler å jobbe med. Han vil være en ekte ressurs for ethvert team.\n\nTa gjerne kontakt hvis du trenger mer informasjon.\n\nMed vennlig hilsen,",
+                    "t.169": "Last ned brevet:"
                 }
             };
 

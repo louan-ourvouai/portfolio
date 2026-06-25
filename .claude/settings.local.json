@@ -17,7 +17,20 @@
       "Bash(git commit -m ' *)",
       "WebFetch(domain:www.palzgame.com)",
       "PowerShell(Copy-Item *)",
-      "Bash(grep -n 'section-title h2::before\\\\|section-title h2::after\\\\|section-title h2 {\\\\|section-title h2$' index.html)"
+      "Bash(grep -n 'section-title h2::before\\\\|section-title h2::after\\\\|section-title h2 {\\\\|section-title h2$' index.html)",
+      "Bash(cp \"C:/Users/Ourvouai Louan/Documents/Dev/GitHub/Garypto_TradingApp/images/logo.png\" \"C:/Users/Ourvouai Louan/Documents/Dev/GitHub/portfolio/assets/img/portfolio/Garypto.png\" && ls -la \"C:/Users/Ourvouai Louan/Documents/Dev/GitHub/portfolio/assets/img/portfolio/Garypto.png\")",
+      "Bash(git push *)",
+      "Bash(command -v pdftotext)",
+      "Bash(command -v python)",
+      "Bash(command -v python3)",
+      "Bash(python -c \"import pypdf\")",
+      "Bash(python -c \"import fitz; print\\('pymupdf ok'\\)\")",
+      "Bash(pdftotext -layout \"Lettre_de_Recommandation_FR_Marin.pdf\" -)",
+      "Bash(pdftotext -layout \"Letter_of_Recommendation_EN_Marin.pdf\" -)",
+      "Bash(cp \"C:/Users/Ourvouai Louan/Documents/AI/Claude/ClaudeProjects/Job_Search_2026/Lettre de recommandation/Letter_of_Recommendation_EN_Marin.pdf\" assets/recommendations/)",
+      "Bash(cp \"C:/Users/Ourvouai Louan/Documents/AI/Claude/ClaudeProjects/Job_Search_2026/Lettre de recommandation/Lettre_de_Recommandation_FR_Marin.pdf\" assets/recommendations/)",
+      "Bash(node -e ' *)",
+      "mcp__Claude_Preview__preview_start"
     ]
   }
 }
