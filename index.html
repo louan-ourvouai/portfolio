@@ -55,7 +55,9 @@
       z-index: 9999;
       background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27180%27%20height%3D%27180%27%3E%0A%3Cfilter%20id%3D%27n%27%3E%0A%20%20%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%27.8%27%20numOctaves%3D%273%27%20stitchTiles%3D%27stitch%27/%3E%0A%20%20%3CfeColorMatrix%20type%3D%27saturate%27%20values%3D%270%27/%3E%0A%3C/filter%3E%0A%3Crect%20width%3D%27180%27%20height%3D%27180%27%20filter%3D%27url%28%23n%29%27%20opacity%3D%27.35%27/%3E%0A%3C/svg%3E");
       opacity: 0.05;
-      mix-blend-mode: overlay;
+      /* No mix-blend-mode: a blended full-viewport fixed layer forces the
+         browser to re-read and re-composite the whole viewport every frame. */
+      transform: translateZ(0);
     }
 
 
@@ -657,7 +659,6 @@
     }
 
     .portfolio .portfolio-info {
-      backdrop-filter: blur(10px);
       background: linear-gradient(
         180deg,
         rgba(7, 20, 14, 0.0) 0%,
@@ -827,7 +828,6 @@ main.main.kitraz-site-ambience {
       background:
         radial-gradient(1000px 600px at 10% 0%, rgba(184, 138, 59, 0.10), transparent 60%),
         linear-gradient(180deg, rgba(244, 241, 234, 0.86) 0%, rgba(233, 226, 215, 0.86) 100%);
-      backdrop-filter: blur(2px);
     }
 
     main.main.kitraz-site-ambience section.section:not(.hero):not(.kitraz-ambience).dark-background {
@@ -1454,7 +1454,7 @@ Remote work matters to me because it supports a healthier pace, long-term sustai
 
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
                             <div class="portfolio-content h-100">
-                                <img src="assets/img/portfolio/Palz.png" class="img-fluid" alt="">
+                                <img src="assets/img/portfolio/Palz.avif" class="img-fluid" alt="" width="506" height="900" loading="lazy" decoding="async">
                                 <div class="portfolio-info">
                                     <h4 data-i18n="t.154">Palz</h4>
                                     <p data-i18n="t.155">Lead Gameplay Engineer Mobile pet care &amp; arcade game with crypto wallet</p>
@@ -1463,7 +1463,7 @@ Remote work matters to me because it supports a healthier pace, long-term sustai
                             </div>
                         </div><div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
                             <div class="portfolio-content h-100">
-                                <img src="assets/img/portfolio/Garypto.png" class="img-fluid" alt="">
+                                <img src="assets/img/portfolio/Garypto.png" class="img-fluid" alt="" width="128" height="128" loading="lazy" decoding="async">
                                 <div class="portfolio-info">
                                     <h4 data-i18n="t.156">Garypto Trading App</h4>
                                     <p data-i18n="t.157">Open-source full-stack algorithmic crypto trading bot for Binance: momentum strategy, risk engine and live dashboard</p>
@@ -1472,7 +1472,7 @@ Remote work matters to me because it supports a healthier pace, long-term sustai
                             </div>
                         </div><div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
                             <div class="portfolio-content h-100">
-                                <img src="assets/img/portfolio/ZeusVsHuman.avif" class="img-fluid" alt="">
+                                <img src="assets/img/portfolio/ZeusVsHuman.avif" class="img-fluid" alt="" width="315" height="236" loading="lazy" decoding="async">
                                 <div class="portfolio-info">
                                     <h4 data-i18n="t.120">Zeus Versus Humans</h4>
                                     <p data-i18n="t.121">Final-year project: a 3D mobile game developed by a team of four</p>
@@ -1481,7 +1481,7 @@ Remote work matters to me because it supports a healthier pace, long-term sustai
                             </div>
                         </div><div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
                             <div class="portfolio-content h-100">
-                                <img src="assets/img/portfolio/AlterMaze.avif" class="img-fluid" alt="">
+                                <img src="assets/img/portfolio/AlterMaze.avif" class="img-fluid" alt="" width="315" height="236" loading="lazy" decoding="async">
                                 <div class="portfolio-info">
                                     <h4 data-i18n="t.122">Alter Maze</h4>
                                     <p data-i18n="t.123">UniJam 2023</p>
@@ -1490,7 +1490,7 @@ Remote work matters to me because it supports a healthier pace, long-term sustai
                             </div>
                         </div><div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
                             <div class="portfolio-content h-100">
-                                <img src="assets/img/portfolio/PourLaGloire.avif" class="img-fluid" alt="">
+                                <img src="assets/img/portfolio/PourLaGloire.avif" class="img-fluid" alt="" width="315" height="236" loading="lazy" decoding="async">
                                 <div class="portfolio-info">
                                     <h4 data-i18n="t.124">For Glory</h4>
                                     <p data-i18n="t.125">Personnal Project made in 2024</p>
@@ -1499,7 +1499,7 @@ Remote work matters to me because it supports a healthier pace, long-term sustai
                             </div>
                         </div><div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
                             <div class="portfolio-content h-100">
-                                <img src="assets/img/portfolio/Archeollector.avif" class="img-fluid" alt="">
+                                <img src="assets/img/portfolio/Archeollector.avif" class="img-fluid" alt="" width="296" height="222" loading="lazy" decoding="async">
                                 <div class="portfolio-info">
                                     <h4 data-i18n="t.126">Archeollector</h4>
                                     <p data-i18n="t.127">GameJam Etiolles 2022</p>
@@ -1508,7 +1508,7 @@ Remote work matters to me because it supports a healthier pace, long-term sustai
                             </div>
                         </div><div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
                             <div class="portfolio-content h-100">
-                                <img src="assets/img/portfolio/StellarRoad.avif" class="img-fluid" alt="">
+                                <img src="assets/img/portfolio/StellarRoad.avif" class="img-fluid" alt="" width="720" height="404" loading="lazy" decoding="async">
                                 <div class="portfolio-info">
                                     <h4 data-i18n="t.128">Stellar road</h4>
                                     <p data-i18n="t.129">1st-year Internship</p>
@@ -1517,7 +1517,7 @@ Remote work matters to me because it supports a healthier pace, long-term sustai
                             </div>
                         </div><div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
                             <div class="portfolio-content h-100">
-                                <img src="assets/img/portfolio/ChronoSwitch.avif" class="img-fluid" alt="">
+                                <img src="assets/img/portfolio/ChronoSwitch.avif" class="img-fluid" alt="" width="281" height="211" loading="lazy" decoding="async">
                                 <div class="portfolio-info">
                                     <h4 data-i18n="t.130">Chrono Switch</h4>
                                     <p data-i18n="t.131">Global Game Jam 2022</p>
@@ -1526,7 +1526,7 @@ Remote work matters to me because it supports a healthier pace, long-term sustai
                             </div>
                         </div><div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
                             <div class="portfolio-content h-100">
-                                <img src="assets/img/portfolio/FromScratch.avif" class="img-fluid" alt="">
+                                <img src="assets/img/portfolio/FromScratch.avif" class="img-fluid" alt="" width="315" height="236" loading="lazy" decoding="async">
                                 <div class="portfolio-info">
                                     <h4 data-i18n="t.132">From Scratch</h4>
                                     <p data-i18n="t.133">UniJam 2021 & the first game I ever made</p>
