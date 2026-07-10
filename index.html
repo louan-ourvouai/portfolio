@@ -194,6 +194,62 @@
       transform: translateY(-1px);
     }
 
+    /* --- Recommendations carousel --- */
+    .recommendations .reco-slider {
+      padding: 8px 6px 4px;
+    }
+    .recommendations .reco-slider .swiper-slide {
+      height: auto;
+    }
+    .recommendations .reco-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.1rem;
+      margin-top: 1.7rem;
+    }
+    .recommendations .reco-nav {
+      width: 44px;
+      height: 44px;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      border: 1px solid var(--accent);
+      background: transparent;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+    .recommendations .reco-nav:hover,
+    .recommendations .reco-nav:focus-visible {
+      background: var(--accent);
+      color: var(--forest-800);
+      transform: translateY(-1px);
+    }
+    .recommendations .reco-pagination {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      width: auto;
+    }
+    .recommendations .reco-pagination .swiper-pagination-bullet {
+      width: 9px;
+      height: 9px;
+      margin: 0;
+      opacity: 1;
+      background: rgba(184, 138, 59, 0.4);
+      transition: width 0.25s ease, background 0.25s ease;
+    }
+    .recommendations .reco-pagination .swiper-pagination-bullet-active {
+      width: 26px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
     /* ==========================================================
        VISUAL ENHANCEMENTS (proposals)
        ========================================================== */
@@ -1491,9 +1547,66 @@ Remote work matters to me because it supports a healthier pace, long-term sustai
 
             <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-                <div class="reco-letter">
-                    <i class="bi bi-quote reco-quote-icon"></i>
-                    <p class="reco-body" data-i18n="t.168">To whom it may concern,
+                <div class="reco-slider swiper init-swiper">
+                    <script type="application/json" class="swiper-config">
+                        {
+                          "loop": true,
+                          "speed": 700,
+                          "autoHeight": true,
+                          "slidesPerView": 1,
+                          "spaceBetween": 24,
+                          "keyboard": { "enabled": true },
+                          "autoplay": {
+                            "delay": 12000,
+                            "disableOnInteraction": false,
+                            "pauseOnMouseEnter": true
+                          },
+                          "navigation": {
+                            "nextEl": ".reco-next",
+                            "prevEl": ".reco-prev"
+                          },
+                          "pagination": {
+                            "el": ".reco-pagination",
+                            "clickable": true
+                          }
+                        }
+                    </script>
+
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide">
+                            <div class="reco-letter">
+                                <i class="bi bi-quote reco-quote-icon"></i>
+                                <p class="reco-body" data-i18n="t.172">To Whom It May Concern
+
+Re: Reference for Louan Ourvouai
+
+I’m pleased to provide this reference for Louan, who worked with us as Lead Game Developer over a contract engagement lasting five months on PALZ, a mobile virtual pet game built in Unity. I am Co-Director of Elevate Core, the studio behind PALZ, and worked alongside him closely throughout.
+
+As lead developer, Louan was responsible for building the game’s mini activities, implementing UI/UX, and integrating animations produced by our designer and animator. He also worked directly with our back end developer to implement multiple in game endpoints. Throughout the project he showed solid, practical command of Unity and consistently delivered work that integrated cleanly into the wider codebase.
+
+Two qualities stood out. First, his collaboration: he worked smoothly across disciplines, with the designer, animator, and back end developer alike, communicated well, and was genuinely easy to work with. Second, and most notably, his creativity. Louan has a real talent for game design and was at his best generating fun, original gameplay concepts; several of the game’s most engaging activities came from his ideas. Working within clearly defined objectives, he delivered reliably and productively.
+
+Louan would be a strong addition to any team that values a creative, collaborative, and technically capable developer with a genuine instinct for fun gameplay. I’m happy to be contacted for any further detail.
+
+Sincerely,</p>
+                                <div class="reco-meta">
+                                    <p class="reco-author" data-i18n="t.170">Martin Damour</p>
+                                    <span class="reco-role" data-i18n="t.171">Co-Director, Elevate Core</span>
+                                    <span class="reco-company" data-i18n="t.167">Palz · Elevate Core LLC</span>
+                                </div>
+                                <div class="reco-downloads">
+                                    <span class="reco-dl-label" data-i18n="t.169">Download the letter:</span>
+                                    <a class="reco-dl-btn" href="assets/recommendations/Letter_of_Recommendation_EN_Martin.pdf" download><i class="bi bi-filetype-pdf"></i> English</a>
+                                    <a class="reco-dl-btn" href="assets/recommendations/Lettre_de_Recommandation_FR_Martin.pdf" download><i class="bi bi-filetype-pdf"></i> Français</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="reco-letter">
+                                <i class="bi bi-quote reco-quote-icon"></i>
+                                <p class="reco-body" data-i18n="t.168">To whom it may concern,
 
 It is my pleasure to wholeheartedly recommend Louan Ourvouai, with whom I had the opportunity to collaborate on the development of PALZ, an application built with Unity.
 
@@ -1508,16 +1621,26 @@ I recommend Louan without hesitation for any project requiring a motivated, thor
 Please feel free to reach out if you need any further information.
 
 Best regards,</p>
-                    <div class="reco-meta">
-                        <p class="reco-author" data-i18n="t.165">Marin Enault</p>
-                        <span class="reco-role" data-i18n="t.166">Full-Stack Developer</span>
-                        <span class="reco-company" data-i18n="t.167">Palz · Elevate Core LLC</span>
+                                <div class="reco-meta">
+                                    <p class="reco-author" data-i18n="t.165">Marin Enault</p>
+                                    <span class="reco-role" data-i18n="t.166">Full-Stack Developer</span>
+                                    <span class="reco-company" data-i18n="t.167">Palz · Elevate Core LLC</span>
+                                </div>
+                                <div class="reco-downloads">
+                                    <span class="reco-dl-label" data-i18n="t.169">Download the letter:</span>
+                                    <a class="reco-dl-btn" href="assets/recommendations/Letter_of_Recommendation_EN_Marin.pdf" download><i class="bi bi-filetype-pdf"></i> English</a>
+                                    <a class="reco-dl-btn" href="assets/recommendations/Lettre_de_Recommandation_FR_Marin.pdf" download><i class="bi bi-filetype-pdf"></i> Français</a>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="reco-downloads">
-                        <span class="reco-dl-label" data-i18n="t.169">Download the letter:</span>
-                        <a class="reco-dl-btn" href="assets/recommendations/Letter_of_Recommendation_EN_Marin.pdf" download><i class="bi bi-filetype-pdf"></i> English</a>
-                        <a class="reco-dl-btn" href="assets/recommendations/Lettre_de_Recommandation_FR_Marin.pdf" download><i class="bi bi-filetype-pdf"></i> Français</a>
-                    </div>
+                </div>
+
+                <div class="reco-controls">
+                    <button type="button" class="reco-nav reco-prev" aria-label="Previous recommendation"><i class="bi bi-chevron-left"></i></button>
+                    <div class="reco-pagination"></div>
+                    <button type="button" class="reco-nav reco-next" aria-label="Next recommendation"><i class="bi bi-chevron-right"></i></button>
                 </div>
 
             </div>
@@ -1825,7 +1948,10 @@ Best regards,
                     "t.166": "Full-Stack Developer",
                     "t.167": "Palz · Elevate Core LLC",
                     "t.168": "To whom it may concern,\n\nIt is my pleasure to wholeheartedly recommend Louan Ourvouai, with whom I had the opportunity to collaborate on the development of PALZ, an application built with Unity.\n\nLouan demonstrated excellent technical skills throughout the project, particularly in the design and development of mini-games. His command of the Unity environment allowed him to deliver polished, engaging game experiences that integrated seamlessly into the overall application. He has a natural ability to turn ideas into functional and creative game mechanics efficiently.\n\nOne of his contributions that stood out most to our team was his ability to conduct in-depth research and technical benchmarks, which he consistently translated into clear, well-structured presentations. This skill for synthesizing complex information into accessible and actionable insights proved invaluable to the team, and directly shaped several key decisions throughout the project.\n\nBeyond his technical abilities, Louan stands out for his great attitude within the team. His consistently upbeat demeanor helped maintain a positive working atmosphere, even during the most demanding phases of the project. His outstanding punctuality and strong sense of responsibility also made the collaboration remarkably smooth and reliable.\n\nI recommend Louan without hesitation for any project requiring a motivated, thorough, and enjoyable Unity developer to work with. He would be a true asset to any team.\n\nPlease feel free to reach out if you need any further information.\n\nBest regards,",
-                    "t.169": "Download the letter:"
+                    "t.169": "Download the letter:",
+                    "t.170": "Martin Damour",
+                    "t.171": "Co-Director, Elevate Core",
+                    "t.172": "To Whom It May Concern\n\nRe: Reference for Louan Ourvouai\n\nI’m pleased to provide this reference for Louan, who worked with us as Lead Game Developer over a contract engagement lasting five months on PALZ, a mobile virtual pet game built in Unity. I am Co-Director of Elevate Core, the studio behind PALZ, and worked alongside him closely throughout.\n\nAs lead developer, Louan was responsible for building the game’s mini activities, implementing UI/UX, and integrating animations produced by our designer and animator. He also worked directly with our back end developer to implement multiple in game endpoints. Throughout the project he showed solid, practical command of Unity and consistently delivered work that integrated cleanly into the wider codebase.\n\nTwo qualities stood out. First, his collaboration: he worked smoothly across disciplines, with the designer, animator, and back end developer alike, communicated well, and was genuinely easy to work with. Second, and most notably, his creativity. Louan has a real talent for game design and was at his best generating fun, original gameplay concepts; several of the game’s most engaging activities came from his ideas. Working within clearly defined objectives, he delivered reliably and productively.\n\nLouan would be a strong addition to any team that values a creative, collaborative, and technically capable developer with a genuine instinct for fun gameplay. I’m happy to be contacted for any further detail.\n\nSincerely,"
                 },
                 "fr": {
                     "__meta": {
@@ -1998,7 +2124,10 @@ Best regards,
                     "t.166": "Développeur Full-Stack",
                     "t.167": "Palz · Elevate Core LLC",
                     "t.168": "À qui de droit,\n\nJ’ai le plaisir de recommander chaleureusement Louan Ourvouai, avec qui j’ai eu l’occasion de collaborer dans le cadre du développement de PALZ, une application réalisée sous Unity.\n\nLouan a fait preuve d’excellentes compétences techniques tout au long du projet, en particulier dans la conception et le développement de mini-jeux. Sa maîtrise de l’environnement Unity lui a permis de livrer des expériences de jeu soignées, ludiques et bien intégrées à l’application globale. Il sait transformer des idées en mécaniques de jeu fonctionnelles avec efficacité et créativité.\n\nL’une de ses contributions qui nous a particulièrement marqués est sa capacité à mener des recherches approfondies et des benchmarks techniques, qu’il a systématiquement su restituer sous forme de présentations claires et structurées. Cette aptitude à synthétiser des informations complexes pour les rendre accessibles et actionnables a été d’une grande valeur pour l’équipe, et a directement influencé plusieurs décisions clés du projet.\n\nAu-delà de ses qualités techniques, Louan se distingue par son excellente attitude au sein de l’équipe. Sa bonne humeur constante a contribué à maintenir une ambiance de travail positive, même dans les phases les plus intenses du projet. Sa ponctualité exemplaire et son sens des responsabilités ont également rendu la collaboration particulièrement fluide et fiable.\n\nJe recommande Louan sans réserve pour tout projet nécessitant un développeur Unity motivé, rigoureux et agréable à travailler. Il sera un atout précieux pour n’importe quelle équipe.\n\nN’hésitez pas à me contacter pour tout renseignement complémentaire.\n\nCordialement,",
-                    "t.169": "Télécharger la lettre :"
+                    "t.169": "Télécharger la lettre :",
+                    "t.170": "Martin Damour",
+                    "t.171": "Codirecteur, Elevate Core",
+                    "t.172": "À qui de droit\n\nObjet : Lettre de recommandation pour Louan Ourvouai\n\nJ’ai le plaisir de fournir cette recommandation pour Louan, qui a collaboré avec nous en tant que Lead Game Developer dans le cadre d’un contrat de cinq mois sur PALZ, un jeu mobile de type animal de compagnie virtuel développé sous Unity. Je suis codirecteur d’Elevate Core, le studio à l’origine de PALZ, et j’ai travaillé étroitement à ses côtés tout au long du projet.\n\nEn tant que développeur principal, Louan était responsable de la création des mini activités du jeu, de la mise en œuvre de l’UI/UX et de l’intégration des animations réalisées par notre designer et notre animateur. Il a également travaillé directement avec notre développeur back end pour implémenter plusieurs endpoints dans le jeu. Tout au long du projet, il a démontré une maîtrise solide et concrète d’Unity et a constamment livré un travail qui s’intégrait proprement dans l’ensemble du code.\n\nDeux qualités se sont particulièrement distinguées. Premièrement, sa capacité de collaboration : il a travaillé avec fluidité entre les différentes disciplines, avec le designer, l’animateur et le développeur back end, il communiquait bien et était réellement agréable à côtoyer. Deuxièmement, et surtout, sa créativité. Louan possède un véritable talent pour la conception de jeux et excellait lorsqu’il s’agissait de générer des concepts de gameplay amusants et originaux ; plusieurs des activités les plus captivantes du jeu sont nées de ses idées. En travaillant dans le cadre d’objectifs clairement définis, il livrait de manière fiable et productive.\n\nLouan serait un atout précieux pour toute équipe qui valorise un développeur créatif, collaboratif et techniquement compétent, doté d’un véritable instinct pour le plaisir de jeu. Je reste à votre disposition pour tout complément d’information.\n\nCordialement,"
                 },
                 "pt-br": {
                     "__meta": { "title": "Ourvouai Louan - Portfólio" },
@@ -2169,7 +2298,10 @@ Best regards,
                     "t.166": "Desenvolvedor Full-Stack",
                     "t.167": "Palz · Elevate Core LLC",
                     "t.168": "A quem possa interessar,\n\nÉ um prazer recomendar de todo o coração Louan Ourvouai, com quem tive a oportunidade de colaborar no desenvolvimento do PALZ, uma aplicação feita em Unity.\n\nLouan demonstrou excelentes competências técnicas ao longo de todo o projeto, especialmente no design e no desenvolvimento de minijogos. Seu domínio do ambiente Unity permitiu que ele entregasse experiências de jogo refinadas e envolventes, integradas de forma fluida à aplicação como um todo. Ele tem uma habilidade natural para transformar ideias em mecânicas de jogo funcionais e criativas com eficiência.\n\nUma das contribuições que mais se destacou para a nossa equipe foi sua capacidade de conduzir pesquisas aprofundadas e benchmarks técnicos, que ele sempre transformava em apresentações claras e bem estruturadas. Essa habilidade de sintetizar informações complexas em insights acessíveis e acionáveis foi muito valiosa para a equipe e influenciou diretamente várias decisões importantes do projeto.\n\nAlém de suas habilidades técnicas, Louan se destaca por sua excelente atitude dentro da equipe. Seu bom humor constante ajudou a manter um ambiente de trabalho positivo, mesmo nas fases mais intensas do projeto. Sua pontualidade exemplar e seu forte senso de responsabilidade também tornaram a colaboração notavelmente fluida e confiável.\n\nRecomendo Louan sem hesitação para qualquer projeto que exija um desenvolvedor Unity motivado, rigoroso e agradável de se trabalhar. Ele será um verdadeiro trunfo para qualquer equipe.\n\nFique à vontade para entrar em contato caso precise de mais informações.\n\nAtenciosamente,",
-                    "t.169": "Baixar a carta:"
+                    "t.169": "Baixar a carta:",
+                    "t.170": "Martin Damour",
+                    "t.171": "Codiretor, Elevate Core",
+                    "t.172": "A quem possa interessar\n\nRef.: Recomendação para Louan Ourvouai\n\nTenho o prazer de fornecer esta recomendação para Louan, que trabalhou conosco como desenvolvedor de jogos principal em um contrato de cinco meses no PALZ, um jogo mobile de pet virtual feito em Unity. Sou codiretor da Elevate Core, o estúdio por trás do PALZ, e trabalhei lado a lado com ele durante todo o projeto.\n\nComo desenvolvedor principal, Louan foi responsável por construir as miniatividades do jogo, implementar a UI/UX e integrar as animações produzidas por nosso designer e animador. Ele também trabalhou diretamente com nosso desenvolvedor back-end para implementar vários endpoints internos do jogo. Ao longo do projeto, demonstrou domínio sólido e prático do Unity e entregou de forma consistente um trabalho que se integrava perfeitamente à base de código como um todo.\n\nDuas qualidades se destacaram. Primeiro, sua colaboração: ele trabalhou de forma fluida entre as disciplinas, com o designer, o animador e o desenvolvedor back-end, comunicou-se bem e foi genuinamente agradável de se trabalhar. Segundo, e mais notavelmente, sua criatividade. Louan tem um talento real para game design e dava o seu melhor ao gerar conceitos de gameplay divertidos e originais; várias das atividades mais envolventes do jogo nasceram de suas ideias. Trabalhando dentro de objetivos claramente definidos, ele entregou de forma confiável e produtiva.\n\nLouan seria uma grande adição a qualquer equipe que valorize um desenvolvedor criativo, colaborativo e tecnicamente capaz, com um instinto genuíno para um gameplay divertido. Fico à disposição para qualquer informação adicional.\n\nAtenciosamente,"
                 },
                 "nb": {
                     "__meta": { "title": "Ourvouai Louan - Portefølje" },
@@ -2340,7 +2472,10 @@ Best regards,
                     "t.166": "Full-Stack-utvikler",
                     "t.167": "Palz · Elevate Core LLC",
                     "t.168": "Til den det måtte angå,\n\nDet er en glede for meg å gi min varmeste anbefaling av Louan Ourvouai, som jeg hadde muligheten til å samarbeide med på utviklingen av PALZ, en applikasjon bygget med Unity.\n\nLouan viste utmerkede tekniske ferdigheter gjennom hele prosjektet, særlig i design og utvikling av minispill. Hans behersking av Unity-miljøet gjorde det mulig for ham å levere forseggjorte og engasjerende spillopplevelser som ble sømløst integrert i applikasjonen som helhet. Han har en naturlig evne til å gjøre ideer om til funksjonelle og kreative spillmekanikker på en effektiv måte.\n\nEt av bidragene som utmerket seg mest for teamet vårt, var hans evne til å gjennomføre grundig research og tekniske benchmarks, som han konsekvent omsatte til klare og velstrukturerte presentasjoner. Denne evnen til å sammenfatte kompleks informasjon til tilgjengelig og handlingsrettet innsikt var uvurderlig for teamet, og formet direkte flere viktige beslutninger gjennom prosjektet.\n\nUtover de tekniske ferdighetene utmerker Louan seg med sin gode holdning i teamet. Hans konsekvent positive humør bidro til å opprettholde en god arbeidsatmosfære, selv i de mest krevende fasene av prosjektet. Hans enestående punktlighet og sterke ansvarsfølelse gjorde også samarbeidet bemerkelsesverdig smidig og pålitelig.\n\nJeg anbefaler Louan uten forbehold for ethvert prosjekt som krever en motivert, grundig og hyggelig Unity-utvikler å jobbe med. Han vil være en ekte ressurs for ethvert team.\n\nTa gjerne kontakt hvis du trenger mer informasjon.\n\nMed vennlig hilsen,",
-                    "t.169": "Last ned brevet:"
+                    "t.169": "Last ned brevet:",
+                    "t.170": "Martin Damour",
+                    "t.171": "Meddirektør, Elevate Core",
+                    "t.172": "Til den det måtte angå\n\nAng.: Referanse for Louan Ourvouai\n\nDet er en glede for meg å gi denne referansen for Louan, som jobbet hos oss som ledende spillutvikler i et femmåneders kontraktsoppdrag på PALZ, et mobilt virtuelt kjæledyrspill bygget i Unity. Jeg er meddirektør i Elevate Core, studioet bak PALZ, og jobbet tett sammen med ham gjennom hele prosjektet.\n\nSom ledende utvikler hadde Louan ansvaret for å bygge spillets miniaktiviteter, implementere UI/UX og integrere animasjoner laget av designeren og animatøren vår. Han jobbet også direkte med backend-utvikleren vår for å implementere flere endepunkter i spillet. Gjennom hele prosjektet viste han solid og praktisk beherskelse av Unity, og leverte konsekvent arbeid som ble integrert rent i den øvrige kodebasen.\n\nTo egenskaper utmerket seg. For det første samarbeidsevnen hans: han jobbet sømløst på tvers av fagfelt, med designeren, animatøren og backend-utvikleren, kommuniserte godt og var virkelig hyggelig å jobbe med. For det andre, og mest bemerkelsesverdig, kreativiteten hans. Louan har et ekte talent for spilldesign og var på sitt beste når han utviklet morsomme og originale gameplay-konsepter; flere av spillets mest engasjerende aktiviteter kom fra hans ideer. Innenfor klart definerte mål leverte han pålitelig og produktivt.\n\nLouan vil være et sterkt tilskudd til ethvert team som verdsetter en kreativ, samarbeidsvillig og teknisk dyktig utvikler med en genuin sans for morsomt gameplay. Jeg stiller gjerne opp for ytterligere informasjon.\n\nMed vennlig hilsen,"
                 }
             };
 
