@@ -12,7 +12,7 @@
   "t.010": "Ourvouai Louan",
   "t.011": "Eu sou",
   "t.012": "Sobre",
-  "t.013": "Sou Louan Ourvouai, engenheiro de gameplay Unity e graduado pela ENSIIE (Paris–Évry), uma escola de engenharia especializada em ciência da computação e matemática, com diploma de engenheiro, trilha JIN (Jogos e Interações Digitais).\n\nDesenvolvi projetos Unity para mobile, VR, Windows e macOS, cobrindo gêneros como RTS, FPS/TPS, idle, plataforma 2D e serious games.\n\nJá liderei o desenvolvimento de um RTS mobile e atualmente lidero um projeto de jogo mobile de cuidado de pets.\n\nAlém da programação, gosto de contribuir em toda a estrutura da criação: visual, sonora, narrativa e game design. Meu objetivo é ajudar a criar experiências coesas para os jogadores.",
+  "t.013": "Sou Louan Ourvouai, engenheiro graduado pela ENSIIE Paris (Évry-Courcouronnes), com quatro anos de experiência abrangendo programação de gameplay em Unity, desenvolvimento de software C# / .NET, sistemas embarcados e integração blockchain/DeFi.\n\nGosto de conduzir um projeto de ponta a ponta: entrega mobile e multiplataforma (Windows, macOS, iOS, Android), desenvolvimento VR/XR e todo o ciclo de vida, da prototipagem rápida à produção, em equipes ágeis.\n\nTambém desenvolvo meus próprios projetos, incluindo o Garypto, um bot de trading de criptomoedas automatizado, e protótipos eletrônicos com Arduino.\n\nAlém da programação, sou apaixonado por ciência e divulgação científica, com formação em eletrônica, automação e processamento de sinais.",
   "t.014": "Engenheiro de Gameplay · Desenvolvedor Unity e C#/.NET.",
   "t.015": "Transformo ideias em protótipos jogáveis e sistemas de gameplay prontos para produção no Unity, com foco em game feel, comunicação clara e uma arquitetura limpa.",
   "t.016": "Data de nascimento:",
@@ -55,10 +55,10 @@
   "t.053": "Inglês",
   "t.054": "C1 - Avançado (certificado)",
   "t.055": "Currículo",
-  "t.056": "Uma visão geral do meu CV destacando minha experiência, formação e principais projetos como engenheiro de gameplay Unity.",
+  "t.056": "Uma visão geral do meu CV destacando minha experiência, formação e principais projetos em Unity, C# / .NET, sistemas embarcados e blockchain.",
   "t.057": "Experiência profissional",
   "t.058": "Engenheiro Lead Gameplay Developer",
-  "t.059": "Desde dezembro de 2025",
+  "t.059": "De dezembro de 2025 a junho de 2026",
   "t.060": "ELEVATE CORE LLC, Remoto",
   "t.061": "Desenvolvendo o protótipo de um jogo mobile de cuidado de pets no Unity, dos sistemas centrais de gameplay até um loop jogável.",
   "t.062": "Desenvolvendo o gameplay, a progressão e o game design geral do jogo.",
@@ -170,5 +170,9 @@
   "t.169": "Baixar a carta:",
   "t.170": "Martin Damour",
   "t.171": "Codiretor, Elevate Core",
-  "t.172": "A quem possa interessar\n\nRef.: Recomendação para Louan Ourvouai\n\nTenho o prazer de fornecer esta recomendação para Louan, que trabalhou conosco como desenvolvedor de jogos principal em um contrato de cinco meses no PALZ, um jogo mobile de pet virtual feito em Unity. Sou codiretor da Elevate Core, o estúdio por trás do PALZ, e trabalhei lado a lado com ele durante todo o projeto.\n\nComo desenvolvedor principal, Louan foi responsável por construir as miniatividades do jogo, implementar a UI/UX e integrar as animações produzidas por nosso designer e animador. Ele também trabalhou diretamente com nosso desenvolvedor back-end para implementar vários endpoints internos do jogo. Ao longo do projeto, demonstrou domínio sólido e prático do Unity e entregou de forma consistente um trabalho que se integrava perfeitamente à base de código como um todo.\n\nDuas qualidades se destacaram. Primeiro, sua colaboração: ele trabalhou de forma fluida entre as disciplinas, com o designer, o animador e o desenvolvedor back-end, comunicou-se bem e foi genuinamente agradável de se trabalhar. Segundo, e mais notavelmente, sua criatividade. Louan tem um talento real para game design e dava o seu melhor ao gerar conceitos de gameplay divertidos e originais; várias das atividades mais envolventes do jogo nasceram de suas ideias. Trabalhando dentro de objetivos claramente definidos, ele entregou de forma confiável e produtiva.\n\nLouan seria uma grande adição a qualquer equipe que valorize um desenvolvedor criativo, colaborativo e tecnicamente capaz, com um instinto genuíno para um gameplay divertido. Fico à disposição para qualquer informação adicional.\n\nAtenciosamente,"
+  "t.172": "A quem possa interessar\n\nRef.: Recomendação para Louan Ourvouai\n\nTenho o prazer de fornecer esta recomendação para Louan, que trabalhou conosco como desenvolvedor de jogos principal em um contrato de cinco meses no PALZ, um jogo mobile de pet virtual feito em Unity. Sou codiretor da Elevate Core, o estúdio por trás do PALZ, e trabalhei lado a lado com ele durante todo o projeto.\n\nComo desenvolvedor principal, Louan foi responsável por construir as miniatividades do jogo, implementar a UI/UX e integrar as animações produzidas por nosso designer e animador. Ele também trabalhou diretamente com nosso desenvolvedor back-end para implementar vários endpoints internos do jogo. Ao longo do projeto, demonstrou domínio sólido e prático do Unity e entregou de forma consistente um trabalho que se integrava perfeitamente à base de código como um todo.\n\nDuas qualidades se destacaram. Primeiro, sua colaboração: ele trabalhou de forma fluida entre as disciplinas, com o designer, o animador e o desenvolvedor back-end, comunicou-se bem e foi genuinamente agradável de se trabalhar. Segundo, e mais notavelmente, sua criatividade. Louan tem um talento real para game design e dava o seu melhor ao gerar conceitos de gameplay divertidos e originais; várias das atividades mais envolventes do jogo nasceram de suas ideias. Trabalhando dentro de objetivos claramente definidos, ele entregou de forma confiável e produtiva.\n\nLouan seria uma grande adição a qualquer equipe que valorize um desenvolvedor criativo, colaborativo e tecnicamente capaz, com um instinto genuíno para um gameplay divertido. Fico à disposição para qualquer informação adicional.\n\nAtenciosamente,",
+  "t.173": "Desenvolvimento de jogos",
+  "t.174": "C# / .NET",
+  "t.175": "Blockchain / DeFi",
+  "t.176": "Sistemas embarcados"
 }

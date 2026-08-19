@@ -12,7 +12,7 @@
   "t.010": "Ourvouai Louan",
   "t.011": "I'm",
   "t.012": "About",
-  "t.013": "I’m Louan Ourvouai, a Unity gameplay engineer and ENSIIE (Paris–Évry) graduate, an engineering school specialized in computer science and mathematics, with a Graduate Engineer degree, JIN track (Video Games and Digital Interactions).\n\nI’ve built Unity projects across mobile, VR, Windows, and macOS, covering genres such as RTS, FPS/TPS, idle, 2D platformers, and serious games.\n\nI previously led the development of a mobile RTS, and I’m currently leading a pet-care mobile game project.\n\nBeyond programming, I enjoy contributing across the whole creation pipeline: visuals, sound, narrative, and game design to help craft cohesive player experiences.",
+  "t.013": "I’m Louan Ourvouai, an engineering graduate from ENSIIE Paris (Évry-Courcouronnes) with four years of experience spanning Unity gameplay programming, C# / .NET software development, embedded systems, and blockchain/DeFi integration.\n\nI’m comfortable owning a project end to end: mobile and cross-platform delivery (Windows, macOS, iOS, Android), VR/XR development, and the full lifecycle from rapid prototyping to production in agile teams.\n\nI also build and ship my own projects, including Garypto, an automated crypto-trading bot, and Arduino-based electronics prototypes.\n\nBeyond programming, I’m passionate about science and scientific communication, with a background in electronics, automation, and signal processing.",
   "t.014": "Gameplay Engineer · Unity & C#/.NET Developer.",
   "t.015": "I turn ideas into playable prototypes and production-ready gameplay systems in Unity, focusing on game feel, clear communication, and clean architecture.",
   "t.016": "Birthday:",
@@ -55,10 +55,10 @@
   "t.053": "English",
   "t.054": "C1 - Advanced (certified)",
   "t.055": "Resume",
-  "t.056": "A snapshot of my CV highlighting my experience, education, and key projects as a Unity gameplay engineer.",
+  "t.056": "A snapshot of my CV highlighting my experience, education, and key projects across Unity, C# / .NET, embedded systems, and blockchain.",
   "t.057": "Professional Experiences",
   "t.058": "Engineer Lead Gameplay Developer",
-  "t.059": "Since December 2025",
+  "t.059": "December 2025 - June 2026",
   "t.060": "ELEVATE CORE LLC, Remote",
   "t.061": "Developing the prototype of a mobile pet-care game in Unity, from core gameplay systems to a playable loop.",
   "t.062": "Designing the game’s gameplay, progression, and overall game design.",
@@ -170,5 +170,9 @@
   "t.169": "Download the letter:",
   "t.170": "Martin Damour",
   "t.171": "Co-Director, Elevate Core",
-  "t.172": "To Whom It May Concern\n\nRe: Reference for Louan Ourvouai\n\nI’m pleased to provide this reference for Louan, who worked with us as Lead Game Developer over a contract engagement lasting five months on PALZ, a mobile virtual pet game built in Unity. I am Co-Director of Elevate Core, the studio behind PALZ, and worked alongside him closely throughout.\n\nAs lead developer, Louan was responsible for building the game’s mini activities, implementing UI/UX, and integrating animations produced by our designer and animator. He also worked directly with our back end developer to implement multiple in game endpoints. Throughout the project he showed solid, practical command of Unity and consistently delivered work that integrated cleanly into the wider codebase.\n\nTwo qualities stood out. First, his collaboration: he worked smoothly across disciplines, with the designer, animator, and back end developer alike, communicated well, and was genuinely easy to work with. Second, and most notably, his creativity. Louan has a real talent for game design and was at his best generating fun, original gameplay concepts; several of the game’s most engaging activities came from his ideas. Working within clearly defined objectives, he delivered reliably and productively.\n\nLouan would be a strong addition to any team that values a creative, collaborative, and technically capable developer with a genuine instinct for fun gameplay. I’m happy to be contacted for any further detail.\n\nSincerely,"
+  "t.172": "To Whom It May Concern\n\nRe: Reference for Louan Ourvouai\n\nI’m pleased to provide this reference for Louan, who worked with us as Lead Game Developer over a contract engagement lasting five months on PALZ, a mobile virtual pet game built in Unity. I am Co-Director of Elevate Core, the studio behind PALZ, and worked alongside him closely throughout.\n\nAs lead developer, Louan was responsible for building the game’s mini activities, implementing UI/UX, and integrating animations produced by our designer and animator. He also worked directly with our back end developer to implement multiple in game endpoints. Throughout the project he showed solid, practical command of Unity and consistently delivered work that integrated cleanly into the wider codebase.\n\nTwo qualities stood out. First, his collaboration: he worked smoothly across disciplines, with the designer, animator, and back end developer alike, communicated well, and was genuinely easy to work with. Second, and most notably, his creativity. Louan has a real talent for game design and was at his best generating fun, original gameplay concepts; several of the game’s most engaging activities came from his ideas. Working within clearly defined objectives, he delivered reliably and productively.\n\nLouan would be a strong addition to any team that values a creative, collaborative, and technically capable developer with a genuine instinct for fun gameplay. I’m happy to be contacted for any further detail.\n\nSincerely,",
+  "t.173": "Game Development",
+  "t.174": "C# / .NET",
+  "t.175": "Blockchain / DeFi",
+  "t.176": "Embedded Systems"
 }
